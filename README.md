@@ -2,14 +2,14 @@
 
 This is a self-contained frontend for the FSF Consultancy website. It uses plain HTML, CSS, and JavaScript; no build tools or dependencies are required.
 
-The page follows the FSF brand guide: navy `#25285E`, charcoal `#2D2D2D`, and off-white `#F0EFEF`; a General Sans-first type stack; one clear visual motif per section; and separate routes for business facilitation and education information for prospective students in Ethiopia. It also includes an English/Amharic language switch.
+The page follows the FSF brand guide: navy `#25285E`, charcoal `#2D2D2D`, and off-white `#F0EFEF`; a General Sans-first type stack; spacious editorial layouts; and an English/Amharic language switch. UNICAF campus and laboratory photographs are used to make the scholarship pathway more visible, alongside a concise business facilitation section.
 
 ## Open and edit
 
 1. Unzip the downloaded package.
 2. Open the `fsf-website` folder in Visual Studio Code.
 3. Edit `index.html`. The styles and interaction code are included in that file.
-4. Keep the `assets` folder alongside `index.html`; it contains the three FSF post images used in the page.
+4. Keep the `assets` folder alongside `index.html`; it contains the FSF post artwork and optimized UNICAF campus and laboratory photographs used by the page.
 5. Open `index.html` in a browser to preview your changes.
 
 ## Publish with GitHub
