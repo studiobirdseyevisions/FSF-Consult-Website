@@ -5,83 +5,413 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#141414">
   <link rel="icon" type="image/svg+xml" href="assets/fsf-favicon.svg">
-  <meta name="description" content="Learn more about FSF, explore new opportunities, and connect with our team.">
-  <title>FSF — Your next step starts here</title>
+  <meta name="description" content="FSF helps students choose a UNICAF University course, apply, and ask about scholarships, from the first question to the first class.">
+  <title>FSF — Your degree, with FSF beside you</title>
   <style>
-    :root{--navy:#2842a0;--ink:#141414;--muted:#2d2d2d;--paper:#f0efef;--sans:'General Sans','Avenir Next',Arial,sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}button,input,select,textarea{border-radius:10px}::selection{background:var(--navy);color:var(--paper)}
-    .nav{width:min(1160px,calc(100% - 48px));height:76px;padding:0 clamp(18px,2.6vw,34px);display:flex;align-items:center;justify-content:space-between;background:rgba(20,20,20,.86);border:1px solid #f0efef35;border-radius:999px;backdrop-filter:blur(16px);position:absolute;top:20px;left:50%;transform:translateX(-50%);z-index:5;color:var(--paper);box-shadow:0 12px 42px #14141430}.brand{display:inline-flex;align-items:center;white-space:nowrap}.brand img{display:block;width:62px;height:42px;object-fit:contain;filter:drop-shadow(0 1px 2px #2842a0)}.nav-links{display:flex;align-items:center;gap:clamp(16px,3vw,38px);font-size:13px;color:var(--paper)}.nav-links a{transition:opacity .2s}.nav-links a:hover{opacity:.72}.nav-cta{padding:12px 17px;border-radius:9px;background:var(--navy);color:var(--paper);transition:background .2s,transform .2s}.nav-cta:hover{background:var(--ink);transform:translateY(-2px)}.language-toggle,.menu-toggle{font:inherit;cursor:pointer}.language-toggle{border:1px solid var(--paper);border-radius:9px;background:transparent;color:var(--paper);padding:10px 14px;font-size:12px;font-weight:700}.menu-toggle{display:none;border:0;background:none;color:var(--paper);font-size:12px;font-weight:750}
-    .scholarship-ticker{position:absolute;z-index:3;top:112px;left:0;right:0;overflow:hidden;background:var(--paper);color:var(--navy);padding:11px 0;border-top:1px solid #2842a035;border-bottom:1px solid #2842a035;-webkit-mask-image:linear-gradient(90deg,transparent 0,#141414 8vw,#141414 calc(100% - 8vw),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#141414 8vw,#141414 calc(100% - 8vw),transparent 100%)}.ticker-track{display:flex;width:max-content;animation:scholarship-scroll 34s linear infinite}.ticker-track a{display:flex;align-items:center;gap:36px;padding:0 24px;font-size:12px;font-weight:650;white-space:nowrap;letter-spacing:.025em}.ticker-track a:after{content:"✳";font-size:14px;color:var(--navy)}@keyframes scholarship-scroll{to{transform:translateX(-50%)}}
-    .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;background:var(--ink);color:var(--paper);overflow:hidden;border-radius:0 0 18px 18px}.hero-copy{width:min(100%,1050px);padding:clamp(205px,26vh,285px) clamp(26px,8vw,124px) clamp(76px,12vh,130px);position:relative;z-index:1}.eyebrow,.section-tag{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:750}.eyebrow{display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";height:1px;width:30px;background:currentColor}.hero h1{font-size:clamp(58px,9.2vw,132px);line-height:.9;letter-spacing:-.075em;font-weight:760;margin:25px 0 22px;max-width:1050px}.hero h1 em{font-style:normal;font-weight:520}.hero-copy p{font-size:clamp(16px,1.5vw,19px);line-height:1.55;max-width:440px;margin:0 0 28px;color:var(--paper)}.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:22px;padding:15px 19px;border-radius:10px;background:var(--navy);color:var(--paper);font-size:13px;font-weight:750;transition:transform .25s,background .25s,color .25s}.button:hover{transform:translateY(-3px);background:var(--ink);color:var(--paper)}.button .arrow{font-size:18px}.button-ghost{border:1px solid var(--paper);border-radius:10px;background:transparent;color:var(--paper)}.button-ghost:hover{background:var(--navy);color:var(--paper);border-color:var(--navy)}.hero-foot{margin-top:clamp(40px,6vh,68px);display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.11em;text-transform:uppercase}.hero-foot:before{content:"";width:34px;height:1px;background:currentColor}.hero-image{position:absolute;inset:0;z-index:0;overflow:hidden;background:radial-gradient(ellipse at 78% 35%,#2842a0 0%,transparent 46%),linear-gradient(135deg,#141414 8%,#2d2d2d 100%)}.hero-image:after{content:"";position:absolute;inset:0;background:url("assets/fsf-logo-white.svg") no-repeat right 7% center / min(70vw,900px);opacity:.1;mix-blend-mode:screen}.image-caption{display:none}
+    :root{--navy:#2842a0;--ink:#141414;--muted:#3a3a3a;--paper:#f0efef;--line:#2842a040;--sans:'General Sans','Avenir Next',Arial,sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button,a{-webkit-tap-highlight-color:transparent}
+    ::selection{background:var(--navy);color:var(--paper)}
+    :focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+    em{font-style:normal;font-weight:520}
+    .section-tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:var(--navy)}
+    .wrap{max-width:1180px;margin:0 auto}
 
-    .unicaf-overview{padding:clamp(60px,8vw,104px) clamp(22px,7vw,96px) clamp(74px,9vw,118px);background:var(--paper)}.unicaf-overview-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,6vw,84px);align-items:start;max-width:1150px;margin:0 auto 30px}.unicaf-mark{padding-top:7px}.unicaf-mark img{display:block;width:min(235px,100%);height:auto;object-fit:contain}.unicaf-overview-copy{max-width:700px}.unicaf-overview h2{font-size:clamp(36px,5.3vw,68px);line-height:.99;letter-spacing:-.06em;margin:16px 0 20px}.unicaf-overview-copy p{max-width:670px;font-size:16px;line-height:1.65;margin:0 0 14px;color:var(--muted)}.scholarship-note{padding:16px 18px;border-left:3px solid var(--navy);background:#2842a008;border-radius:0 10px 10px 0}.unicaf-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}.unicaf-campus{position:relative;max-width:1320px;margin:0 auto;overflow:hidden;border-radius:16px;background:var(--ink)}.unicaf-campus img{width:100%;height:clamp(230px,38vw,490px);display:block;object-fit:cover;object-position:center 53%}.unicaf-campus figcaption{position:absolute;right:16px;bottom:16px;padding:10px 14px;background:#141414d9;color:var(--paper);font-size:11px;letter-spacing:.09em;text-transform:uppercase;border-radius:8px}
-    .intro{padding:clamp(80px,10vw,130px) clamp(24px,9vw,136px);display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start}.section-tag{color:var(--navy)}.intro h2,.scholarship h2,.business h2{font-size:clamp(36px,5.8vw,72px);line-height:.99;letter-spacing:-.055em;font-weight:700;margin:18px 0 0}.intro-aside{padding-top:34px;max-width:490px}.intro-aside p{font-size:18px;line-height:1.6;margin:0 0 22px}.text-link{font-size:13px;font-weight:750;display:inline-flex;align-items:center;gap:13px;color:var(--navy)}.text-link span{font-size:18px;transition:transform .2s}.text-link:hover span{transform:translate(4px,-4px)}
-    .gallery{padding:0 clamp(18px,4vw,58px) clamp(86px,11vw,140px)}.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 clamp(6px,3vw,40px) 22px}.gallery-head h2{font-size:clamp(28px,4vw,46px);line-height:1;letter-spacing:-.04em;margin:12px 0 0}.gallery-note{font-size:12px;letter-spacing:.04em}.gallery-grid{display:grid;grid-template-columns:1.08fr .92fr .92fr .92fr;grid-template-rows:clamp(250px,30vw,400px);gap:12px}.gallery-photo{position:relative;overflow:hidden;background:var(--navy);border-radius:14px}.gallery-photo:first-child{grid-row:span 1}.gallery-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}.gallery-photo:hover img{transform:scale(1.045)}.gallery-photo:first-child img{object-position:center 42%}.gallery-photo:nth-child(2) img{object-position:center 38%}.gallery-photo:nth-child(3) img{object-position:center 42%}.photo-label{position:absolute;left:15px;bottom:15px;color:var(--paper);background:var(--navy);padding:9px 11px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border-radius:8px}
-    .scholarship{padding:clamp(72px,10vw,128px) clamp(24px,9vw,136px);background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1.05fr .95fr;gap:8vw;align-items:center;position:relative;overflow:hidden}.scholarship:after{content:"";position:absolute;width:52vw;height:52vw;right:-21vw;top:-28vw;border:1px solid #2842a030;border-radius:50%;box-shadow:0 0 0 28px #2842a008,0 0 0 56px #2842a008,0 0 0 84px #2842a008;animation:orbit 45s linear infinite}.scholarship-copy,.degree-card{position:relative;z-index:1}.scholarship .section-tag{color:var(--navy)}.scholarship .button{background:var(--navy);color:var(--paper)}.scholarship .button:hover{background:var(--ink);color:var(--paper)}.scholarship h2{margin:20px 0 22px}.scholarship-copy p{font-size:16px;line-height:1.6;max-width:470px;margin:0 0 27px}.degree-card{padding:clamp(24px,4vw,42px);border:1px solid #2842a066;border-radius:14px}.degree-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase}.degree-card h3{font-size:clamp(28px,3.7vw,42px);line-height:1.05;letter-spacing:-.04em;margin:30px 0}.degree-list{display:flex;gap:8px;flex-wrap:wrap}.degree-list span{padding:9px 11px;border:1px solid #2842a066;font-size:12px;border-radius:999px}.degree-foot{border-top:1px solid #2842a055;margin-top:31px;padding-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:12px}.degree-foot strong{font-size:20px}
-    .business-contact{padding:clamp(78px,10vw,125px) clamp(24px,9vw,136px);display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(32px,7vw,90px);align-items:start;background:var(--paper)}.business-copy{max-width:610px}.business-contact h2{font-size:clamp(34px,4.5vw,58px);line-height:.99;letter-spacing:-.055em;margin:18px 0}.business-contact .business-copy>p{font-size:16px;line-height:1.65;max-width:520px;margin:0 0 23px}.business-points{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.business-points span{padding:9px 12px;border:1px solid #2842a066;border-radius:999px;color:var(--navy);font-size:11px}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:17px;padding:clamp(22px,3vw,38px);border:1px solid #2842a055;border-radius:16px;background:#2842a008}.contact-form label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700}.contact-form input,.contact-form textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:1px solid #2842a055;padding:12px;border-radius:9px;outline:none}.contact-form textarea{min-height:108px;resize:vertical}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--navy);box-shadow:0 0 0 2px #2842a022}.contact-form .wide{grid-column:1/-1}.contact-form button{justify-self:start;border:0;cursor:pointer}.contact-form .form-status{grid-column:1/-1}.contact-privacy{grid-column:1/-1;color:var(--muted);font-size:11px;line-height:1.5;margin:0}.contact-honeypot{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .follow{padding:24px clamp(24px,5vw,76px);border-top:1px solid #2d2d2d2a;display:flex;justify-content:space-between;align-items:center;gap:20px}.social-links{display:flex;gap:22px;font-size:12px}.social-links a:hover{color:var(--navy)}footer{background:var(--ink);color:var(--paper);padding:17px clamp(24px,5vw,76px) 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:10px}footer .brand img{display:block;width:54px;height:38px;object-fit:contain}
-    .hero-slides{position:relative;min-height:440px;overflow:hidden}.hero-slides.is-moving{-webkit-mask-image:linear-gradient(90deg,transparent 0,#141414 8vw,#141414 calc(100% - 8vw),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#141414 8vw,#141414 calc(100% - 8vw),transparent 100%)}.hero-track{display:flex;width:100%;transition:transform .82s cubic-bezier(.22,.75,.25,1);will-change:transform}.hero-slide{position:relative;inset:auto;flex:0 0 100%;min-width:100%;opacity:1;transform:none;pointer-events:none;transition:opacity .2s ease}.hero-slide.is-active{pointer-events:auto}.hero-slide h1{max-width:900px}.slide-controls{display:flex;gap:9px;margin-top:28px}.slide-dot{width:34px;height:6px;border-radius:999px;border:0;padding:0;background:#f0efef80;cursor:pointer;transition:background .2s,width .2s}.slide-dot.active{width:54px;background:var(--paper)}
-    .gallery-grid{grid-template-rows:clamp(340px,45vw,600px);gap:15px}.gallery{padding-bottom:clamp(110px,14vw,180px)}.gallery-head{margin-bottom:30px}
-    .signup{padding:clamp(78px,10vw,130px) clamp(24px,9vw,136px);background:var(--paper);display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;align-items:start}.signup h2{font-size:clamp(38px,5.5vw,68px);line-height:.98;letter-spacing:-.055em;margin:19px 0 22px}.signup-copy>p{font-size:16px;line-height:1.65;max-width:480px}.signup-note{margin-top:34px;padding-top:16px;border-top:1px solid #2842a055;color:var(--navy);font-size:13px}.lead-form{display:grid;grid-template-columns:1fr 1fr;gap:19px}.lead-form label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700}.lead-form input,.lead-form textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #2842a070;padding:12px 10px;outline:none;resize:vertical;border-radius:8px}.lead-form input:focus,.lead-form textarea:focus{border-color:var(--navy);box-shadow:0 1px 0 var(--navy)}.lead-form .form-message{grid-column:1/-1}.lead-form .button{grid-column:1/-1;justify-self:start;border:0;cursor:pointer}.form-status{grid-column:1/-1;font-size:12px;line-height:1.5;margin:0;color:var(--navy)}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}@keyframes arrive{from{transform:scale(1.035);opacity:.75}to{transform:scale(1);opacity:1}}@keyframes orbit{to{transform:rotate(360deg)}}
-    @media(max-width:800px){.unicaf-overview-head{grid-template-columns:1fr;gap:23px}.unicaf-mark img{width:190px}.hero{min-height:900px;min-height:100svh}.hero-copy{padding-left:7vw;padding-right:7vw}.intro{grid-template-columns:1fr;gap:20px}.intro-aside{padding-top:0;margin-left:auto}.scholarship{gap:34px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:clamp(300px,52vw,440px) clamp(300px,52vw,440px)}}
-    @media(max-width:620px){.unicaf-overview{padding:58px 20px 76px}.unicaf-overview-head{gap:20px;margin-bottom:22px}.unicaf-mark img{width:160px}.unicaf-overview h2{font-size:clamp(35px,10vw,50px)}.unicaf-overview-copy p{font-size:15px}.unicaf-campus img{height:270px}.nav{width:calc(100% - 24px);height:66px;top:12px;padding:0 18px}.brand{font-size:12px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:66px;left:14px;right:14px;padding:20px;background:var(--paper);border:1px solid #2842a030;flex-direction:column;align-items:stretch;gap:17px;box-shadow:0 12px 30px #2842a018}.nav-links.open{display:flex;border-radius:14px}.nav-cta{text-align:center}.nav-links a{padding:3px}.language-toggle{padding:9px 10px;font-size:11px}.nav{width:calc(100% - 24px);height:66px;top:12px;padding:0 18px}.nav-links{color:var(--ink)}.nav-links.open{background:var(--paper);border:1px solid #2842a030}.nav-links.open .nav-cta{color:var(--paper)}.menu-toggle{display:block}.hero{min-height:92svh}.scholarship-ticker{top:90px}.hero-copy{padding:180px 23px 76px}.hero h1{font-size:clamp(54px,14vw,82px);max-width:600px}.hero-copy p{max-width:390px}.hero-foot{margin-top:42px}.hero-image:after{background-position:right -12% center;background-size:115vw}.image-caption{bottom:18px}.intro{padding:78px 24px 70px}.intro-aside p{font-size:16px}.gallery{padding:0 15px 78px}.gallery-head{align-items:flex-start;flex-direction:column;margin:0 5px 18px}.gallery-note{margin:0}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 230px;gap:8px}.gallery-photo img{object-position:center 34%}.signup{grid-template-columns:1fr;padding:72px 24px;gap:32px}.lead-form{grid-template-columns:1fr}.lead-form .form-message,.lead-form .button,.form-status{grid-column:1}.hero-slides{min-height:500px}.gallery-grid{grid-template-rows:260px 260px}.scholarship-copy p{font-size:15px}.business-contact{grid-template-columns:1fr;gap:32px;padding:75px 24px}.business-contact .business-copy>p{font-size:15px}.contact-form{grid-template-columns:1fr;padding:22px}.contact-form .wide,.contact-form .form-status,.contact-privacy{grid-column:1}.follow{padding:22px 24px;align-items:flex-start;flex-direction:column}.social-links{flex-wrap:wrap;gap:17px}footer{padding:18px 24px 23px;flex-wrap:wrap}footer>span{width:100%}}
-    [lang="am"] .eyebrow,[lang="am"] .section-tag,.degree-label,.photo-label{letter-spacing:.02em;text-transform:none}[lang="am"] .hero h1,[lang="am"] .intro h2,[lang="am"] .scholarship h2,[lang="am"] .business-contact h2,[lang="am"] .degree-card h3{letter-spacing:0;line-height:1.12}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    /* Nav — fixed so it is always reachable */
+    .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;width:min(1160px,calc(100% - 32px));height:70px;padding:0 clamp(16px,2.4vw,30px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(20,20,20,.72);border:1px solid #f0efef30;border-radius:999px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--paper);transition:background .25s,box-shadow .25s}
+    .nav.scrolled{background:rgba(20,20,20,.94);box-shadow:0 10px 34px #14141440}
+    .brand{display:inline-flex;align-items:center}.brand img{display:block;width:58px;height:40px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,34px);font-size:14px}
+    .nav-links a{transition:opacity .2s}.nav-links a:hover{opacity:.72}
+    .nav-cta{padding:11px 17px;border-radius:999px;background:var(--navy);color:var(--paper);font-weight:700}
+    .nav-cta:hover{opacity:1!important;background:#3552bd}
+    .nav-right{display:flex;align-items:center;gap:10px}
+    .language-toggle,.menu-toggle{font:inherit;cursor:pointer;color:var(--paper);background:transparent}
+    .language-toggle{border:1px solid #f0efef90;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700}
+    .menu-toggle{display:none;border:0;font-size:13px;font-weight:750;padding:10px 4px}
+
+    /* Hero */
+    .hero{position:relative;min-height:min(100svh,920px);display:flex;align-items:flex-end;background:radial-gradient(ellipse at 78% 30%,#2842a0 0%,transparent 48%),linear-gradient(135deg,#141414 8%,#2d2d2d 100%);color:var(--paper);overflow:hidden;border-radius:0 0 20px 20px}
+    .hero:after{content:"";position:absolute;inset:0;background:url("assets/fsf-logo-white.svg") no-repeat right 6% center / min(64vw,860px);opacity:.08;pointer-events:none}
+    .hero-copy{position:relative;z-index:1;width:min(100%,1080px);padding:190px clamp(24px,8vw,120px) clamp(64px,10vh,110px)}
+    .eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750}
+    .eyebrow:before{content:"";height:1px;width:30px;background:currentColor}
+    .hero h1{font-size:clamp(50px,8.4vw,120px);line-height:.92;letter-spacing:-.065em;font-weight:760;margin:24px 0 24px;max-width:1000px}
+    .hero p{font-size:clamp(17px,1.6vw,20px);line-height:1.55;max-width:560px;margin:0 0 30px}
+    .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;gap:18px;padding:15px 20px;border-radius:12px;border:1px solid transparent;background:var(--navy);color:var(--paper);font:inherit;font-size:14px;font-weight:750;cursor:pointer;transition:transform .25s,background .25s,color .25s,border-color .25s}
+    .button:hover{transform:translateY(-2px);background:var(--ink)}
+    .button .arrow{font-size:18px;line-height:1}
+    .button-light{background:var(--paper);color:var(--navy)}.button-light:hover{background:#fff;color:var(--navy)}
+    .button-ghost{background:transparent;border-color:currentColor}.button-ghost:hover{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+    .unicaf .button-ghost,.faq .button-ghost{color:var(--navy)}
+    .unicaf .button-ghost:hover,.faq .button-ghost:hover{color:var(--paper)}
+    [hidden]{display:none!important}
+    .button-whatsapp{background:#1f8f4e}.button-whatsapp:hover{background:#176b3a}
+    .partner{margin-top:clamp(40px,7vh,72px);display:flex;align-items:center;gap:14px;font-size:13px;flex-wrap:wrap}
+    .partner img{height:34px;width:auto;padding:6px 9px;background:var(--paper);border-radius:8px}
+
+    /* Ticker */
+    .ticker{overflow:hidden;background:var(--navy);color:var(--paper);padding:12px 0}
+    .ticker-track{display:flex;width:max-content;animation:ticker 40s linear infinite}
+    .ticker:hover .ticker-track{animation-play-state:paused}
+    .ticker-track a{display:flex;align-items:center;gap:36px;padding:0 24px;font-size:14px;font-weight:650;white-space:nowrap}
+    .ticker-track a:after{content:"✳";font-size:14px;opacity:.7}
+    @keyframes ticker{to{transform:translateX(-50%)}}
+
+    /* How it works */
+    .how{padding:clamp(80px,10vw,130px) clamp(22px,7vw,96px)}
+    .how-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:clamp(34px,5vw,56px);flex-wrap:wrap}
+    .how h2,.unicaf h2,.business h2,.contact h2,.faq h2{font-size:clamp(36px,5.4vw,68px);line-height:.98;letter-spacing:-.055em;font-weight:720;margin:16px 0 0}
+    .how-head p{max-width:420px;font-size:17px;line-height:1.6;color:var(--muted);margin:0}
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:step}
+    .step{position:relative;padding:clamp(24px,3vw,36px);border:1px solid var(--line);border-radius:18px;background:#fff6;counter-increment:step}
+    .step:before{content:counter(step);display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--navy);color:var(--paper);font-weight:760;font-size:20px;margin-bottom:28px}
+    .step h3{font-size:clamp(22px,2.2vw,28px);letter-spacing:-.035em;line-height:1.1;margin:0 0 12px}
+    .step p{font-size:16px;line-height:1.6;color:var(--muted);margin:0}
+    .how-cta{margin-top:30px}
+
+    /* UNICAF */
+    .unicaf{padding:clamp(70px,9vw,110px) clamp(22px,7vw,96px);background:#e6e5ea}
+    .unicaf-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,6vw,84px);align-items:start;margin-bottom:34px}
+    .unicaf-mark img{display:block;width:min(220px,100%);height:auto;padding:12px 14px;background:var(--paper);border-radius:12px}
+    .unicaf-copy p{max-width:680px;font-size:17px;line-height:1.65;margin:20px 0 0;color:var(--muted)}
+    .facts{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+    .facts li{padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--navy);background:var(--paper)}
+    .facts strong{font-weight:760}
+    .scholarship-note{margin-top:22px!important;padding:16px 18px;border-left:3px solid var(--navy);background:#2842a00d;border-radius:0 12px 12px 0}
+    .unicaf .actions{margin-top:26px}
+    .campus{position:relative;margin:0;overflow:hidden;border-radius:18px;background:var(--ink)}
+    .campus img{width:100%;height:clamp(240px,38vw,480px);display:block;object-fit:cover;object-position:center 53%}
+    .campus figcaption{position:absolute;right:16px;bottom:16px;padding:10px 14px;background:#141414d9;color:var(--paper);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:8px}
+
+    /* Business */
+    .business{padding:clamp(70px,9vw,110px) clamp(22px,7vw,96px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,6vw,80px);align-items:end}
+    .business p{font-size:17px;line-height:1.65;color:var(--muted);max-width:560px;margin:20px 0 0}
+    .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+    .chips span{padding:9px 13px;border:1px solid var(--line);border-radius:999px;color:var(--navy);font-size:14px}
+    .business .button{justify-self:start}
+
+    /* Contact */
+    .contact{padding:clamp(80px,10vw,130px) clamp(22px,7vw,96px);background:var(--ink);color:var(--paper);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,84px);align-items:start;border-radius:20px;margin:0 clamp(8px,1.4vw,18px)}
+    .contact .section-tag{color:#9fb1f0}
+    .contact-copy p{font-size:17px;line-height:1.65;max-width:460px;margin:22px 0 0;color:#f0efefd0}
+    .contact-direct{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+    .contact-direct .text-link{font-size:15px;font-weight:700;border-bottom:1px solid #f0efef60;padding-bottom:3px}
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:clamp(22px,3vw,36px);background:var(--paper);color:var(--ink);border-radius:18px}
+    .form fieldset{grid-column:1/-1;border:0;margin:0;padding:0}
+    .form legend{font-size:14px;font-weight:700;margin-bottom:10px;padding:0}
+    .topic{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .topic input{position:absolute;opacity:0;pointer-events:none}
+    .topic label{display:flex;align-items:center;justify-content:center;text-align:center;padding:13px 10px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+    .topic input:checked+label{background:var(--navy);border-color:var(--navy);color:var(--paper)}
+    .topic input:focus-visible+label{outline:2px solid var(--navy);outline-offset:2px}
+    .field{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:700}
+    .field input,.field textarea{width:100%;font:inherit;font-weight:400;font-size:16px;color:var(--ink);background:#fff;border:1px solid #2842a055;padding:13px;border-radius:10px;outline:none}
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px #2842a026}
+    .wide{grid-column:1/-1}
+    .privacy{grid-column:1/-1;font-size:13px;line-height:1.5;color:var(--muted);margin:0}
+    .form .button{grid-column:1/-1;justify-self:start}
+    .form .button[disabled]{opacity:.6;cursor:wait;transform:none}
+    .form-status{grid-column:1/-1;font-size:15px;line-height:1.5;margin:0;padding:14px 16px;border-radius:10px;background:#2842a014;color:var(--navy)}
+    .form-status.error{background:#b3261e14;color:#b3261e}
+    .honeypot{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+    /* FAQ */
+    .faq{padding:clamp(80px,10vw,130px) clamp(22px,7vw,96px);display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(28px,6vw,84px);align-items:start}
+    .faq-list{border-top:1px solid var(--line)}
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 2px;font-size:clamp(18px,1.8vw,21px);font-weight:700;letter-spacing:-.02em}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary:after{content:"+";flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);color:var(--navy);font-size:20px;transition:transform .25s}
+    .faq details[open] summary:after{transform:rotate(45deg)}
+    .faq details p{margin:0 0 24px;max-width:640px;font-size:16px;line-height:1.65;color:var(--muted)}
+    .faq-aside p{font-size:17px;line-height:1.6;color:var(--muted);margin:20px 0 22px}
+
+    /* Footer */
+    .follow{padding:24px clamp(22px,5vw,76px);display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #2d2d2d22;margin-top:clamp(40px,6vw,70px)}
+    .social-links{display:flex;gap:22px;font-size:15px;font-weight:600}.social-links a:hover{color:var(--navy)}
+    footer{background:var(--ink);color:var(--paper);padding:20px clamp(22px,5vw,76px) 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px;flex-wrap:wrap}
+    footer .brand img{width:52px;height:36px}
+    footer nav{display:flex;gap:20px;flex-wrap:wrap}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .steps{grid-template-columns:1fr}
+      .unicaf-head,.business,.contact,.faq{grid-template-columns:1fr}
+      .business{align-items:start}
+    }
+    @media(max-width:760px){
+      .nav{height:62px;top:10px;width:calc(100% - 20px);padding:0 10px 0 16px}
+      .brand img{width:50px;height:34px}
+      .menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:18px;background:var(--paper);color:var(--ink);border:1px solid #2842a030;border-radius:18px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 16px 40px #14141430;font-size:16px}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 8px}
+      .nav-cta{text-align:center;color:var(--paper);margin-top:6px}
+      .hero-copy{padding:150px 22px 60px}
+      .hero h1{font-size:clamp(46px,13.5vw,76px)}
+      .hero:after{background-position:right -30% center;background-size:120vw}
+      .actions .button{flex:1 1 auto;justify-content:space-between}
+      .form{grid-template-columns:1fr;padding:20px}
+      .contact{margin:0 8px;padding:64px 20px}
+      .follow{flex-direction:column;align-items:flex-start}
+    }
+    [lang="am"] .eyebrow,[lang="am"] .section-tag{letter-spacing:.02em;text-transform:none}
+    [lang="am"] h1,[lang="am"] h2,[lang="am"] h3{letter-spacing:0;line-height:1.15}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
-<body>
+<!--
+  WhatsApp: put FSF's number in data-whatsapp below (international format, digits only, e.g. 2519XXXXXXXX).
+  The WhatsApp buttons stay hidden until a number is set.
+-->
+<body data-whatsapp="">
   <nav class="nav" aria-label="Main navigation">
     <a class="brand" href="#top" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" data-en="MENU +" data-am="ምናሌ +">MENU +</button>
-    <div class="nav-links" id="nav-links"><a href="unicaf.html" data-en="Courses" data-am="ኮርሶች">Courses</a><a href="#unicaf" data-en="UNICAF" data-am="UNICAF">UNICAF</a><a href="#business" data-en="About FSF" data-am="ስለ FSF">About FSF</a><a class="nav-cta" href="unicaf.html" target="_blank" rel="noopener" data-en="Learn about UNICAF ↗" data-am="ስለ UNICAF ይወቁ ↗">Learn about UNICAF ↗</a></div>
-    <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to Amharic">አማርኛ</button>
+    <div class="nav-links" id="nav-links">
+      <a href="unicaf.html" data-en="Courses" data-am="ኮርሶች">Courses</a>
+      <a href="#how" data-en="How it works" data-am="እንዴት እንደሚሠራ">How it works</a>
+      <a href="#business" data-en="For businesses" data-am="ለንግዶች">For businesses</a>
+      <a href="#faq" data-en="FAQ" data-am="ጥያቄዎች">FAQ</a>
+      <a class="nav-cta" href="#contact" data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</a>
+    </div>
+    <div class="nav-right">
+      <button class="language-toggle" type="button" lang="am" aria-label="Switch language to Amharic">አማርኛ</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-en="Menu" data-am="ምናሌ">Menu</button>
+    </div>
   </nav>
+
   <main id="top">
     <section class="hero">
-      <div class="scholarship-ticker" role="region" aria-label="UNICAF scholarship information"><div class="ticker-track"><a href="unicaf.html" target="_blank" rel="noopener" data-en="Your next degree may be closer than you think. Ask FSF about UNICAF scholarships. Learn more ↗" data-am="ቀጣይ ዲግሪዎ ከሚያስቡት የበለጠ ቅርብ ሊሆን ይችላል። ስለ UNICAF ስኮላርሺፖች FSFን ይጠይቁ። ተጨማሪ ይወቁ ↗">Your next degree may be closer than you think. Ask FSF about UNICAF scholarships. Learn more ↗</a><a href="unicaf.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1" data-en="Your next degree may be closer than you think. Ask FSF about UNICAF scholarships. Learn more ↗" data-am="ቀጣይ ዲግሪዎ ከሚያስቡት የበለጠ ቅርብ ሊሆን ይችላል። ስለ UNICAF ስኮላርሺፖች FSFን ይጠይቁ። ተጨማሪ ይወቁ ↗">Your next degree may be closer than you think. Ask FSF about UNICAF scholarships. Learn more ↗</a></div></div>
       <div class="hero-copy">
-        <div class="hero-slides" aria-live="polite"><div class="hero-track">
-          <article class="hero-slide is-active" data-slide="0"><div class="eyebrow" data-en="A wider view of what’s possible" data-am="የሚቻለውን በሰፊው ይመልከቱ">A wider view of what’s possible</div><h1 data-en="Meet FSF. More paths are coming." data-am="FSFን ይወቁ። ተጨማሪ መንገዶች እየመጡ ነው።">Meet FSF. <em>More paths are coming.</em></h1><p data-en="Today, we can help you explore UNICAF courses. And this is only one part of the FSF story." data-am="ዛሬ የUNICAF ኮርሶችን እንዲያስሱ እንረዳዎታለን። ይህ የFSF ታሪክ አንድ ክፍል ብቻ ነው።">Today, we can help you explore UNICAF courses. And this is only one part of the FSF story.</p><div class="actions"><a class="button" href="#business"><span data-en="Discover FSF" data-am="FSFን ይወቁ">Discover FSF</span><span class="arrow" aria-hidden="true">↓</span></a><a class="button button-ghost" href="unicaf.html#catalogue"><span data-en="Talk to our team" data-am="ከቡድናችን ጋር ይነጋገሩ">Talk to our team</span><span class="arrow" aria-hidden="true">↗</span></a></div><div class="hero-foot" data-en="A connection to your next step." data-am="ወደ ቀጣዩ እርምጃዎ የሚያገናኝ ድልድይ።">A connection to your next step.</div></article>
-          <article class="hero-slide" data-slide="1" aria-hidden="true" inert><div class="eyebrow" data-en="Your next step, with FSF" data-am="ቀጣይ እርምጃዎ፣ ከFSF ጋር">Your next step, with FSF</div><h1 data-en="Meet FSF. Make room for what’s next." data-am="FSFን ይወቁ። ለሚቀጥለው እርምጃ ቦታ ይክፈቱ።">Meet FSF. <em>Make room for what’s next.</em></h1><p data-en="We connect people and businesses with guidance, opportunity, and a clearer way forward." data-am="ሰዎችን እና ንግዶችን ከመመሪያ፣ ዕድል እና ግልጽ ቀጣይ እርምጃ ጋር እናገናኛለን።">We connect people and businesses with guidance, opportunity, and a clearer way forward.</p><div class="actions"><a class="button" href="unicaf.html" target="_blank" rel="noopener"><span data-en="Learn about UNICAF" data-am="ስለ UNICAF ይወቁ">Learn about UNICAF</span><span class="arrow" aria-hidden="true">↗</span></a><a class="button button-ghost" href="#business"><span data-en="What FSF does" data-am="FSF የሚያደርገው">What FSF does</span><span class="arrow" aria-hidden="true">↓</span></a></div><div class="hero-foot" data-en="Learn. Grow. Go further." data-am="ይማሩ። ያድጉ። የበለጠ ይራመዱ።">Learn. Grow. Go further.</div></article>
-        </div></div><div class="slide-controls" aria-label="Landing page slides"><button type="button" class="slide-dot active" aria-label="Show slide 1"></button><button type="button" class="slide-dot" aria-label="Show slide 2"></button></div>
+        <div class="eyebrow" data-en="Connecting people with opportunity" data-am="ሰዎችን ከዕድል ጋር እናገናኛለን">Connecting people with opportunity</div>
+        <h1 data-en="Your degree, *with FSF beside you.*" data-am="ዲግሪዎን ያግኙ፤ *FSF ከጎንዎ ነው።*">Your degree, <em>with FSF beside you.</em></h1>
+        <p data-en="We help you choose a UNICAF University course, apply, and ask about scholarships — from your first question to your first class." data-am="የUNICAF ዩኒቨርሲቲ ኮርስ እንዲመርጡ፣ እንዲያመለክቱ እና ስለ ስኮላርሺፕ እንዲጠይቁ እንረዳዎታለን — ከመጀመሪያ ጥያቄዎ እስከ መጀመሪያ ክፍልዎ።">We help you choose a UNICAF University course, apply, and ask about scholarships — from your first question to your first class.</p>
+        <div class="actions">
+          <a class="button button-light" href="unicaf.html"><span data-en="Explore 41 courses" data-am="41 ኮርሶችን ያስሱ">Explore 41 courses</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="#contact"><span data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</span><span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="partner"><img src="assets/unicaf-university-logo.png" alt="Unicaf University"><span data-en="Working with UNICAF University" data-am="ከUNICAF ዩኒቨርሲቲ ጋር በመተባበር">Working with UNICAF University</span></div>
       </div>
-      <div class="hero-image" aria-hidden="true"></div>
     </section>
-    <section class="unicaf-overview" id="unicaf" aria-labelledby="unicaf-title"><div class="unicaf-overview-head"><div class="unicaf-mark"><img src="assets/unicaf-university-logo.png" alt="Unicaf University"></div><div class="unicaf-overview-copy"><div class="section-tag" data-en="UNICAF UNIVERSITY · ZAMBIA" data-am="UNICAF ዩኒቨርሲቲ · ዛምቢያ">UNICAF UNIVERSITY · ZAMBIA</div><h2 id="unicaf-title" data-en="A flexible way to move your future forward." data-am="ወደ ፊት ለመራመድ ተለዋዋጭ መንገድ።">A flexible way to move your future forward.</h2><p data-en="UNICAF University in Zambia offers bachelor’s, master’s and doctoral programmes online or on campus, with student support in Lusaka. It brings recognised higher education within reach while giving you more flexibility in how you study." data-am="UNICAF ዩኒቨርሲቲ በዛምቢያ የባችለር፣ የማስተርስ እና የዶክትሬት ፕሮግራሞችን በኦንላይን ወይም በካምፓስ ያቀርባል፤ በሉሳካም የተማሪ ድጋፍ ይሰጣል። የትምህርት መንገድዎን በተለዋዋጭነት እንዲመርጡ ያግዝዎታል።">UNICAF University in Zambia offers bachelor’s, master’s and doctoral programmes online or on campus, with student support in Lusaka. It brings recognised higher education within reach while giving you more flexibility in how you study.</p><p class="scholarship-note" data-en="Eligible students may qualify for a Unicaf Scholarship. Ask FSF to help you explore your options and register your interest through us. Scholarship awards and eligibility are assessed individually." data-am="ብቁ ተማሪዎች ለUnicaf ስኮላርሺፕ ሊያመለክቱ ይችላሉ። አማራጮችዎን ለማስረዳት እና ፍላጎትዎን በእኛ በኩል ለማስመዝገብ FSFን ያነጋግሩ። ብቁነትና የስኮላርሺፕ ውሳኔ በግል ይገመገማሉ።">Eligible students may qualify for a Unicaf Scholarship. Ask FSF to help you explore your options and register your interest through us. Scholarship awards and eligibility are assessed individually.</p><div class="unicaf-actions"><a class="button" href="unicaf.html#catalogue"><span data-en="Explore courses" data-am="ኮርሶችን ያስሱ">Explore courses</span><span class="arrow" aria-hidden="true">↗</span></a><a class="button button-ghost" href="#business"><span data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</span></a></div></div></div><figure class="unicaf-campus"><img src="assets/unicaf-campus-aerial.jpg" alt="Bird’s-eye view of the Unicaf University campus in Zambia" loading="lazy"><figcaption data-en="UNICAF University · Zambia" data-am="UNICAF ዩኒቨርሲቲ · ዛምቢያ">UNICAF University · Zambia</figcaption></figure></section>
-    <section class="intro reveal" id="study"><div><div class="section-tag" data-en="Study with possibility" data-am="በዕድል የተሞላ ትምህርት">Study with possibility</div><h2 data-en="Make room for what’s next." data-am="ለሚቀጥለው እርምጃ ቦታ ይክፈቱ።">Make room for what’s next.</h2></div><div class="intro-aside"><p data-en="Explore online and blended degree options, then take your next step with UNICAF." data-am="የኦንላይን እና የተቀላቀለ ዲግሪ አማራጮችን ያስሱ፤ ቀጣዩን እርምጃም ከUNICAF ጋር ይውሰዱ።">Explore online and blended degree options, then take your next step with UNICAF.</p><a class="text-link" href="unicaf.html#catalogue"><span data-en="Explore courses" data-am="ኮርሶችን ያስሱ">Explore courses</span><span aria-hidden="true">↗</span></a></div></section>
-    <section class="business-contact" id="business" aria-labelledby="business-title"><div class="business-copy"><div class="section-tag" data-en="For business owners" data-am="ለንግድ ባለቤቶች">For business owners</div><h2 id="business-title" data-en="Better connections. Clear next steps." data-am="የተሻሉ ግንኙነቶች። ግልጽ ቀጣይ እርምጃዎች።">Better connections. Clear next steps.</h2><p data-en="FSF helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities." data-am="FSF ንግዶች ትክክለኛ ሰዎችን እንዲያገኙ እና ጠቃሚ ግንኙነቶችን እንዲፈጥሩ ይረዳል። ድርጅቶችን በማገናኘት ለውይይት፣ ለትብብር እና ለአዳዲስ ዕድሎች መንገድ እንከፍታለን።">FSF helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities.</p><div class="business-points"><span data-en="Find the right connections" data-am="ትክክለኛ ግንኙነቶችን ያግኙ">Find the right connections</span><span data-en="Start useful conversations" data-am="ጠቃሚ ውይይቶችን ይጀምሩ">Start useful conversations</span></div></div><form class="contact-form" id="lead-form" data-endpoint="https://script.google.com/macros/s/AKfycbxrtbl-E2Rv7o9htQPBmwVX5n3tqvkfEoLr5PPU3yhsClYQeSZq_7_OOcGBT4_51nipuw/exec"><label><span data-en="Your name" data-am="ስምዎ">Your name</span><input name="name" autocomplete="name" required maxlength="120"></label><label><span data-en="Email or phone" data-am="ኢሜይል ወይም ስልክ">Email or phone</span><input name="contact" autocomplete="email" required maxlength="180"></label><label class="wide"><span data-en="What would you like to figure out?" data-am="ምን ማወቅ ይፈልጋሉ?">What would you like to figure out?</span><textarea name="message" required maxlength="2000"></textarea></label><label class="contact-honeypot" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label><p class="contact-privacy" data-en="Your message will be saved to FSF’s private inquiry sheet so our team can follow up." data-am="መልዕክትዎ ቡድናችን ለመከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣል።">Your message will be saved to FSF’s private inquiry sheet so our team can follow up.</p><button class="button" type="submit"><span data-en="Send message" data-am="መልዕክት ይላኩ">Send message</span><span class="arrow" aria-hidden="true">↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p></form></section>
-    <section class="follow" id="follow"><span class="section-tag" data-en="Follow FSF" data-am="FSFን ይከታተሉ">Follow FSF</span><div class="social-links"><a href="https://www.instagram.com/fsfconsult/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div></section>
+
+    <div class="ticker" role="region" aria-label="Scholarship information">
+      <div class="ticker-track">
+        <a href="#unicaf" data-en="Your next degree may be closer than you think. Ask FSF about UNICAF scholarships." data-am="ቀጣይ ዲግሪዎ ከሚያስቡት የበለጠ ቅርብ ሊሆን ይችላል። ስለ UNICAF ስኮላርሺፖች FSFን ይጠይቁ።">Your next degree may be closer than you think. Ask FSF about UNICAF scholarships.</a>
+        <a href="#unicaf" aria-hidden="true" tabindex="-1" data-en="Your next degree may be closer than you think. Ask FSF about UNICAF scholarships." data-am="ቀጣይ ዲግሪዎ ከሚያስቡት የበለጠ ቅርብ ሊሆን ይችላል። ስለ UNICAF ስኮላርሺፖች FSFን ይጠይቁ።">Your next degree may be closer than you think. Ask FSF about UNICAF scholarships.</a>
+      </div>
+    </div>
+
+    <section class="how reveal" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="how-head">
+          <div>
+            <div class="section-tag" data-en="How FSF helps" data-am="FSF እንዴት ይረዳል">How FSF helps</div>
+            <h2 id="how-title" data-en="One step *at a time.*" data-am="አንድ እርምጃ *በአንድ ጊዜ።*">One step <em>at a time.</em></h2>
+          </div>
+          <p data-en="You don't have to figure it out alone. Here's what working with FSF looks like." data-am="ብቻዎን ማወቅ አይጠበቅብዎትም። ከFSF ጋር መሥራት ይህን ይመስላል።">You don't have to figure it out alone. Here's what working with FSF looks like.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3 data-en="Ask your questions" data-am="ጥያቄዎችዎን ይጠይቁ">Ask your questions</h3>
+            <p data-en="Tell us what you want to study and where you are now. Ask in Amharic or English." data-am="ምን መማር እንደሚፈልጉ እና አሁን ያሉበትን ሁኔታ ይንገሩን። በአማርኛ ወይም በእንግሊዝኛ ይጠይቁ።">Tell us what you want to study and where you are now. Ask in Amharic or English.</p>
+          </li>
+          <li class="step">
+            <h3 data-en="Explore your options" data-am="አማራጮችዎን ያስሱ">Explore your options</h3>
+            <p data-en="We help you compare courses, study modes and entry requirements, and check whether you could qualify for a scholarship." data-am="ኮርሶችን፣ የትምህርት መንገዶችን እና የመግቢያ መስፈርቶችን እንዲያወዳድሩ፣ እንዲሁም ለስኮላርሺፕ ብቁ መሆንዎን እንዲያጣሩ እንረዳዎታለን።">We help you compare courses, study modes and entry requirements, and check whether you could qualify for a scholarship.</p>
+          </li>
+          <li class="step">
+            <h3 data-en="Choose your next step" data-am="ቀጣዩን እርምጃዎን ይምረጡ">Choose your next step</h3>
+            <p data-en="When you're ready, we guide you through the application and stay in touch until you enrol." data-am="ዝግጁ ሲሆኑ በማመልከቻው ሂደት እንመራዎታለን፤ እስኪመዘገቡም ድረስ አብረንዎ እንቆያለን።">When you're ready, we guide you through the application and stay in touch until you enrol.</p>
+          </li>
+        </ol>
+        <div class="how-cta"><a class="button" href="#contact"><span data-en="Start with step 1: ask us" data-am="በእርምጃ 1 ይጀምሩ፤ ይጠይቁን">Start with step 1: ask us</span><span class="arrow" aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+
+    <section class="unicaf reveal" id="unicaf" aria-labelledby="unicaf-title">
+      <div class="wrap">
+        <div class="unicaf-head">
+          <div class="unicaf-mark"><img src="assets/unicaf-university-logo.png" alt="Unicaf University" loading="lazy"></div>
+          <div class="unicaf-copy">
+            <div class="section-tag" data-en="UNICAF University · Zambia" data-am="UNICAF ዩኒቨርሲቲ · ዛምቢያ">UNICAF University · Zambia</div>
+            <h2 id="unicaf-title" data-en="A flexible way to *move your future forward.*" data-am="ወደፊት ለመራመድ *ተለዋዋጭ መንገድ።*">A flexible way to <em>move your future forward.</em></h2>
+            <p data-en="UNICAF University in Zambia offers bachelor's, master's and doctoral programmes. Most are studied fully online, so you can learn from home, with student support based in Lusaka." data-am="UNICAF ዩኒቨርሲቲ በዛምቢያ የባችለር፣ የማስተርስ እና የዶክትሬት ፕሮግራሞችን ያቀርባል። አብዛኞቹ ሙሉ በሙሉ በኦንላይን ስለሚሰጡ ከቤትዎ ሆነው መማር ይችላሉ፤ የተማሪ ድጋፍ በሉሳካ ይገኛል።">UNICAF University in Zambia offers bachelor's, master's and doctoral programmes. Most are studied fully online, so you can learn from home, with student support based in Lusaka.</p>
+            <ul class="facts">
+              <li data-en="*41* programmes" data-am="*41* ፕሮግራሞች"><em>41</em> programmes</li>
+              <li data-en="Bachelor's · Master's · Doctoral" data-am="ባችለር · ማስተርስ · ዶክትሬት">Bachelor's · Master's · Doctoral</li>
+              <li data-en="Online or on campus" data-am="በኦንላይን ወይም በካምፓስ">Online or on campus</li>
+            </ul>
+            <p class="scholarship-note" data-en="Eligible students may qualify for a Unicaf Scholarship. Awards and eligibility are assessed individually — FSF can help you check your options and register your interest." data-am="ብቁ ተማሪዎች ለUnicaf ስኮላርሺፕ ሊያመለክቱ ይችላሉ። ብቁነትና የስኮላርሺፕ ውሳኔ በግል ይገመገማሉ — FSF አማራጮችዎን እንዲያጣሩ እና ፍላጎትዎን እንዲያስመዘግቡ ይረዳዎታል።">Eligible students may qualify for a Unicaf Scholarship. Awards and eligibility are assessed individually — FSF can help you check your options and register your interest.</p>
+            <div class="actions">
+              <a class="button" href="unicaf.html"><span data-en="Browse all courses" data-am="ሁሉንም ኮርሶች ይመልከቱ">Browse all courses</span><span class="arrow" aria-hidden="true">→</span></a>
+              <a class="button button-ghost" href="#contact" data-topic="student"><span data-en="Ask about scholarships" data-am="ስለ ስኮላርሺፕ ይጠይቁ">Ask about scholarships</span></a>
+            </div>
+          </div>
+        </div>
+        <figure class="campus"><img src="assets/unicaf-campus-aerial.jpg" alt="Bird's-eye view of the Unicaf University campus in Zambia" loading="lazy"><figcaption data-en="UNICAF University · Lusaka, Zambia" data-am="UNICAF ዩኒቨርሲቲ · ሉሳካ፣ ዛምቢያ">UNICAF University · Lusaka, Zambia</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="business reveal" id="business" aria-labelledby="business-title">
+      <div>
+        <div class="section-tag" data-en="For businesses" data-am="ለንግዶች">For businesses</div>
+        <h2 id="business-title" data-en="Better connections. *Clear next steps.*" data-am="የተሻሉ ግንኙነቶች። *ግልጽ ቀጣይ እርምጃዎች።*">Better connections. <em>Clear next steps.</em></h2>
+        <p data-en="FSF also helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities." data-am="FSF ንግዶች ትክክለኛ ሰዎችን እንዲያገኙ እና ጠቃሚ ግንኙነቶችን እንዲፈጥሩ ይረዳል። ድርጅቶችን በማገናኘት ለውይይት፣ ለትብብር እና ለአዳዲስ ዕድሎች መንገድ እንከፍታለን።">FSF also helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities.</p>
+        <div class="chips"><span data-en="Find the right connections" data-am="ትክክለኛ ግንኙነቶችን ያግኙ">Find the right connections</span><span data-en="Start useful conversations" data-am="ጠቃሚ ውይይቶችን ይጀምሩ">Start useful conversations</span><span data-en="Explore new markets" data-am="አዳዲስ ገበያዎችን ያስሱ">Explore new markets</span></div>
+      </div>
+      <a class="button" href="#contact" data-topic="business"><span data-en="Talk to FSF about your business" data-am="ስለ ንግድዎ FSFን ያነጋግሩ">Talk to FSF about your business</span><span class="arrow" aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <div class="section-tag" data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</div>
+        <h2 id="contact-title" data-en="Ask us anything. *We'll help you work it out.*" data-am="ማንኛውንም ይጠይቁን። *መፍትሔውን አብረን እናገኛለን።*">Ask us anything. <em>We'll help you work it out.</em></h2>
+        <p data-en="Send a message and the FSF team will get back to you. Whether you're choosing a course or growing a business, the first conversation is where it starts." data-am="መልዕክት ይላኩ፤ የFSF ቡድን ያነጋግርዎታል። ኮርስ እየመረጡም ይሁን ንግድዎን እያሳደጉ፣ ሁሉም የሚጀምረው በመጀመሪያው ውይይት ነው።">Send a message and the FSF team will get back to you. Whether you're choosing a course or growing a business, the first conversation is where it starts.</p>
+        <div class="contact-direct">
+          <a class="button button-whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener" hidden><span data-en="Chat on WhatsApp" data-am="በWhatsApp ያውሩ">Chat on WhatsApp</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://www.instagram.com/fsfconsult/" target="_blank" rel="noopener" data-en="Or message us on Instagram @fsfconsult ↗" data-am="ወይም በInstagram @fsfconsult መልዕክት ይላኩልን ↗">Or message us on Instagram @fsfconsult ↗</a>
+        </div>
+      </div>
+
+      <form class="form" id="lead-form" novalidate data-endpoint="https://script.google.com/macros/s/AKfycbxrtbl-E2Rv7o9htQPBmwVX5n3tqvkfEoLr5PPU3yhsClYQeSZq_7_OOcGBT4_51nipuw/exec">
+        <fieldset>
+          <legend data-en="I'm asking about" data-am="የምጠይቀው ስለ">I'm asking about</legend>
+          <div class="topic">
+            <input type="radio" name="topic" id="topic-student" value="student" checked><label for="topic-student" data-en="Studying" data-am="ትምህርት">Studying</label>
+            <input type="radio" name="topic" id="topic-business" value="business"><label for="topic-business" data-en="My business" data-am="ንግዴ">My business</label>
+          </div>
+        </fieldset>
+        <label class="field"><span data-en="Your name" data-am="ስምዎ">Your name</span><input name="name" autocomplete="name" required maxlength="120"></label>
+        <label class="field"><span data-en="Phone or email" data-am="ስልክ ወይም ኢሜይል">Phone or email</span><input name="contact" autocomplete="tel" required maxlength="180"></label>
+        <label class="field wide"><span id="message-label" data-en="What would you like to study, or what's your question?" data-am="ምን መማር ይፈልጋሉ? ወይም ጥያቄዎ ምንድን ነው?">What would you like to study, or what's your question?</span><textarea name="message" required maxlength="2000"></textarea></label>
+        <label class="honeypot" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+        <p class="privacy" data-en="Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it." data-am="መልዕክትዎ ቡድናችን እንዲከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣል። ለማንም አናጋራውም።">Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it.</p>
+        <button class="button" type="submit"><span data-en="Send message" data-am="መልዕክት ይላኩ">Send message</span><span class="arrow" aria-hidden="true">→</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+    <section class="faq reveal" id="faq" aria-labelledby="faq-title">
+      <div class="faq-aside">
+        <div class="section-tag" data-en="Questions" data-am="ጥያቄዎች">Questions</div>
+        <h2 id="faq-title" data-en="Good to *know.*" data-am="ማወቅ *ጠቃሚ ነው።*">Good to <em>know.</em></h2>
+        <p data-en="Can't find your answer? Ask us directly." data-am="መልስዎን አላገኙም? በቀጥታ ይጠይቁን።">Can't find your answer? Ask us directly.</p>
+        <a class="button button-ghost" href="#contact"><span data-en="Ask a question" data-am="ጥያቄ ይጠይቁ">Ask a question</span><span class="arrow" aria-hidden="true">↑</span></a>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary data-en="Can I study fully online from Ethiopia?" data-am="ከኢትዮጵያ ሆኜ ሙሉ በሙሉ በኦንላይን መማር እችላለሁ?">Can I study fully online from Ethiopia?</summary>
+          <p data-en="Yes, for most courses. 39 of the 41 programmes are taught online. Nursing and Medicine are taught on campus in Lusaka, Zambia." data-am="አዎ፣ ለአብዛኞቹ ኮርሶች። ከ41 ፕሮግራሞች ውስጥ 39ኙ በኦንላይን ይሰጣሉ። ነርሲንግ እና ሕክምና በሉሳካ፣ ዛምቢያ በካምፓስ ይሰጣሉ።">Yes, for most courses. 39 of the 41 programmes are taught online. Nursing and Medicine are taught on campus in Lusaka, Zambia.</p>
+        </details>
+        <details>
+          <summary data-en="What language are the courses taught in?" data-am="ትምህርቱ በምን ቋንቋ ይሰጣል?">What language are the courses taught in?</summary>
+          <p data-en="Courses are taught in English. You can talk to FSF in Amharic or English." data-am="ትምህርቱ በእንግሊዝኛ ይሰጣል። FSFን በአማርኛ ወይም በእንግሊዝኛ ማነጋገር ይችላሉ።">Courses are taught in English. You can talk to FSF in Amharic or English.</p>
+        </details>
+        <details>
+          <summary data-en="How much does it cost?" data-am="ምን ያህል ያስከፍላል?">How much does it cost?</summary>
+          <p data-en="Fees depend on the programme and on any scholarship you receive. Ask FSF for the current fees for the course you're interested in." data-am="ክፍያው በፕሮግራሙ እና በሚያገኙት ስኮላርሺፕ ይወሰናል። ለሚፈልጉት ኮርስ ወቅታዊውን ክፍያ FSFን ይጠይቁ።">Fees depend on the programme and on any scholarship you receive. Ask FSF for the current fees for the course you're interested in.</p>
+        </details>
+        <details>
+          <summary data-en="Can I get a scholarship?" data-am="ስኮላርሺፕ ማግኘት እችላለሁ?">Can I get a scholarship?</summary>
+          <p data-en="Eligible students may qualify for a Unicaf Scholarship. Awards and eligibility are assessed individually, and FSF can help you register your interest." data-am="ብቁ ተማሪዎች ለUnicaf ስኮላርሺፕ ሊያመለክቱ ይችላሉ። ብቁነትና ውሳኔው በግል ይገመገማሉ፤ FSF ፍላጎትዎን እንዲያስመዘግቡ ይረዳዎታል።">Eligible students may qualify for a Unicaf Scholarship. Awards and eligibility are assessed individually, and FSF can help you register your interest.</p>
+        </details>
+        <details>
+          <summary data-en="What do I need to apply?" data-am="ለማመልከት ምን ያስፈልገኛል?">What do I need to apply?</summary>
+          <p data-en="It depends on the level and the programme. A bachelor's degree usually needs a secondary school certificate, and a master's usually needs a bachelor's degree. Tell us your background and we'll check for you." data-am="በደረጃው እና በፕሮግራሙ ይወሰናል። ለባችለር ዲግሪ አብዛኛውን ጊዜ የሁለተኛ ደረጃ ትምህርት ማጠናቀቂያ ሰርተፍኬት፣ ለማስተርስ ደግሞ የባችለር ዲግሪ ያስፈልጋል። የትምህርት ዝግጅትዎን ይንገሩን፤ እኛ እናጣራልዎታለን።">It depends on the level and the programme. A bachelor's degree usually needs a secondary school certificate, and a master's usually needs a bachelor's degree. Tell us your background and we'll check for you.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="follow" aria-label="Follow FSF">
+      <span class="section-tag" data-en="Follow FSF" data-am="FSFን ይከታተሉ">Follow FSF</span>
+      <div class="social-links">
+        <a href="https://www.instagram.com/fsfconsult/" target="_blank" rel="noopener">Instagram ↗</a>
+        <!-- Add FSF's real profile links, then remove "hidden" -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" hidden>Facebook ↗</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" hidden>LinkedIn ↗</a>
+      </div>
+    </section>
   </main>
-  <footer><a class="brand" href="#top" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a><span>© <span id="year"></span> FSF</span><a href="#business" data-en="Questions? Contact FSF ↗" data-am="ጥያቄ አለዎት? FSFን ያግኙ ↗">Questions? Contact FSF ↗</a></footer>
+
+  <footer>
+    <a class="brand" href="#top" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a>
+    <nav aria-label="Footer"><a href="unicaf.html" data-en="Courses" data-am="ኮርሶች">Courses</a><a href="#faq" data-en="FAQ" data-am="ጥያቄዎች">FAQ</a><a href="#contact" data-en="Contact" data-am="ያግኙን">Contact</a></nav>
+    <span>© <span id="year"></span> FSF Consultancy</span>
+  </footer>
+
+  <script src="assets/site.js"></script>
   <script>
-    const menu=document.querySelector('.menu-toggle');
-    const links=document.querySelector('.nav-links');
-    const languageToggle=document.querySelector('#language-toggle');
-    const html=document.documentElement;
-    function setLanguage(amharic){
-      html.lang=amharic?'am':'en';
-      document.querySelectorAll('[data-en][data-am]').forEach(el=>{el.textContent=amharic?el.dataset.am:el.dataset.en});
-      languageToggle.textContent=amharic?'English':'አማርኛ';
-      languageToggle.setAttribute('aria-label',amharic?'Switch language to English':'Switch language to Amharic');
+    // WhatsApp buttons appear only once a number is set on <body data-whatsapp="...">.
+    const whatsapp = document.body.dataset.whatsapp.replace(/\D/g, '');
+    if (whatsapp) document.querySelectorAll('[data-whatsapp-link]').forEach(a => { a.href = 'https://wa.me/' + whatsapp; a.hidden = false; });
+
+    const form = document.querySelector('#lead-form');
+    const status = document.querySelector('#form-status');
+    const messageLabel = document.querySelector('#message-label');
+    const contactInput = form.elements.contact;
+
+    // Switch the message prompt to match what the visitor is asking about.
+    const prompts = {
+      student: ["What would you like to study, or what's your question?", 'ምን መማር ይፈልጋሉ? ወይም ጥያቄዎ ምንድን ነው?'],
+      business: ['What does your business need?', 'ንግድዎ ምን ያስፈልገዋል?']
+    };
+    function setTopic(topic) {
+      form.querySelector('#topic-' + topic).checked = true;
+      messageLabel.dataset.en = prompts[topic][0];
+      messageLabel.dataset.am = prompts[topic][1];
+      messageLabel.textContent = FSF.t(...prompts[topic]);
     }
-    const slides=[...document.querySelectorAll('.hero-slide')];
-    const dots=[...document.querySelectorAll('.slide-dot')];
-    let activeSlide=0;
-    const heroSlides=document.querySelector('.hero-slides');let featherTimer;
-    function showSlide(index){activeSlide=index;heroSlides.classList.add('is-moving');clearTimeout(featherTimer);featherTimer=setTimeout(()=>heroSlides.classList.remove('is-moving'),900);document.querySelector('.hero-track').style.transform=`translateX(-${index*100}%)`;slides.forEach((slide,i)=>{const active=i===index;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',active?'false':'true');slide.inert=!active});dots.forEach((dot,i)=>dot.classList.toggle('active',i===index));}
-    dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showSlide(i);restartCarousel()}));
-    let carousel=setInterval(()=>showSlide((activeSlide+1)%slides.length),4500);
-    function restartCarousel(){clearInterval(carousel);carousel=setInterval(()=>showSlide((activeSlide+1)%slides.length),4500)}
-    const hero=document.querySelector('.hero');hero.addEventListener('mouseenter',()=>clearInterval(carousel));hero.addEventListener('mouseleave',restartCarousel);hero.addEventListener('focusin',()=>clearInterval(carousel));hero.addEventListener('focusout',restartCarousel);
-    const leadForm=document.querySelector('#lead-form');
-    leadForm.addEventListener('submit',async event=>{event.preventDefault();const status=document.querySelector('#form-status');const endpoint=leadForm.dataset.endpoint;if(!endpoint){status.textContent=html.lang==='am'?'የጥያቄ ቅጹ ከሰንጠረዡ ጋር በመገናኘት ላይ ነው።':'The inquiry form is being connected to FSF’s sheet. Please try again soon.';status.hidden=false;return;}const button=leadForm.querySelector('button[type="submit"]');button.disabled=true;status.textContent=html.lang==='am'?'በመላክ ላይ…':'Sending…';status.hidden=false;try{const payload=new URLSearchParams(new FormData(leadForm));payload.set('page','FSF homepage — business/contact');await fetch(endpoint,{method:'POST',mode:'no-cors',body:payload});status.textContent=html.lang==='am'?'እናመሰግናለን። መልዕክትዎ ተልኳል።':'Thank you. Your message has been sent to FSF.';leadForm.reset();}catch(error){status.textContent=html.lang==='am'?'መልዕክቱ አልተላከም። እባክዎ እንደገና ይሞክሩ።':'Your message could not be sent. Please try again.';}finally{button.disabled=false;}});
-    menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open?'true':'false')});
-    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
-    languageToggle.addEventListener('click',()=>setLanguage(html.lang!=='am'));
-    document.querySelector('#year').textContent=new Date().getFullYear();
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    form.querySelectorAll('input[name=topic]').forEach(r => r.addEventListener('change', () => setTopic(r.value)));
+    document.querySelectorAll('a[data-topic]').forEach(a => a.addEventListener('click', () => setTopic(a.dataset.topic)));
+
+    function show(text, isError) {
+      status.textContent = text;
+      status.classList.toggle('error', !!isError);
+      status.hidden = false;
+    }
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const empty = [...form.querySelectorAll('[required]')].find(f => !f.value.trim());
+      if (empty) {
+        show(FSF.t('Please fill in your name, how to reach you, and your message.', 'እባክዎ ስምዎን፣ የመገናኛ መንገድዎን እና መልዕክትዎን ይሙሉ።'), true);
+        empty.focus();
+        return;
+      }
+      const button = form.querySelector('button[type=submit]');
+      button.disabled = true;
+      show(FSF.t('Sending…', 'በመላክ ላይ…'));
+      try {
+        const data = new FormData(form);
+        const topic = data.get('topic');
+        data.delete('topic');
+        const payload = new URLSearchParams(data);
+        payload.set('page', topic === 'business' ? 'FSF homepage — business' : 'FSF homepage — student');
+        await FSF.send(form.dataset.endpoint, payload);
+        const name = form.elements.name.value.trim().split(' ')[0];
+        show(FSF.t(
+          `Thank you, ${name}. Your message is on its way to the FSF team. If you don't hear back within a few days, message us on Instagram @fsfconsult.`,
+          `እናመሰግናለን ${name}። መልዕክትዎ ወደ FSF ቡድን ተልኳል። በጥቂት ቀናት ውስጥ ምላሽ ካላገኙ በInstagram @fsfconsult ያግኙን።`
+        ));
+        form.reset();
+        setTopic('student');
+      } catch (error) {
+        show(FSF.t(
+          "Your message couldn't be sent. Check your internet connection and try again, or message us on Instagram @fsfconsult.",
+          'መልዕክቱ አልተላከም። የኢንተርኔት ግንኙነትዎን አረጋግጠው እንደገና ይሞክሩ፤ ወይም በInstagram @fsfconsult ያግኙን።'
+        ), true);
+      } finally {
+        button.disabled = false;
+      }
+    });
   </script>
 </body>
 </html>
