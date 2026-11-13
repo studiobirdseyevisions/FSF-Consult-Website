@@ -46,6 +46,16 @@
     @media(max-width:620px){.top{padding:0 12px 0 16px}.back{display:none}.top-cta{padding:9px 13px;font-size:13px}.language-toggle{padding:8px 11px;font-size:12px}}
     .modal-apply{margin:22px 0 0;padding-top:18px;border-top:1px solid #2842a030;font-size:14px;color:var(--muted)}
     .modal-apply a{color:var(--navy);font-weight:750;text-decoration:underline;text-underline-offset:3px}
+    .modal-req{margin:0 0 22px;padding:16px 18px;border:1px solid #2842a033;border-radius:12px;background:#2842a00a}
+    .modal-req summary{cursor:pointer;font-weight:750;font-size:15px;color:var(--navy)}
+    .modal-req ul{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;font-size:14px;line-height:1.55}
+    .req-length{margin:12px 0 0;font-size:14px;font-weight:700}
+    .req-note{margin:8px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+    .sch-highlights{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .sch-highlights li{padding:20px 22px;border-radius:16px;background:var(--navy);display:flex;flex-direction:column;gap:6px}
+    .sch-highlights strong{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.03em;line-height:1.1}
+    .sch-highlights span{font-size:14px;line-height:1.5;color:#f0efefd8}
+    @media(max-width:900px){.sch-highlights{grid-template-columns:1fr}}
     /* Scholarship section */
     .scholarship{padding:clamp(70px,9vw,110px) clamp(20px,6vw,82px);background:var(--ink);color:var(--paper);scroll-margin-top:80px}
     .scholarship .tag{color:#9fb1f0}
@@ -118,6 +128,11 @@
         <p data-en="FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor&#x27;s, master&#x27;s and doctoral degrees, studied fully online or blended." data-am="FSF ከUnicaf ዩኒቨርሲቲ ዛምቢያ ጋር የመግባቢያ ስምምነት (MoU) ተፈራርሟል። በዚህ አጋርነት ብቁ ተማሪዎች ሙሉ በሙሉ በኦንላይን ወይም በተቀላቀለ መንገድ ለሚማሩት የባችለር፣ የማስተርስ እና የዶክትሬት ዲግሪዎች እስከ 82% ስኮላርሺፕ ማግኘት ይችላሉ።">FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor's, master's and doctoral degrees, studied fully online or blended.</p>
       </div>
 
+      <ul class="sch-highlights">
+        <li><strong data-en="Up to 82%" data-am="እስከ 82%">Up to 82%</strong><span data-en="scholarship through FSF" data-am="ስኮላርሺፕ በFSF በኩል">scholarship through FSF</span></li>
+        <li><strong id="next-start">New start dates every month</strong><span data-en="Rolling admissions: a new start every month" data-am="ተከታታይ ቅበላ፦ በየወሩ አዲስ ጅማሮ">Rolling admissions: a new start every month</span></li>
+        <li><strong data-en="Free short course" data-am="ነፃ አጭር ኮርስ">Free short course</strong><span data-en="from the University of California, Riverside, once you've paid the minimum deposit" data-am="ዝቅተኛውን ቅድመ ክፍያ ከከፈሉ በኋላ ከካሊፎርኒያ ዩኒቨርሲቲ፣ ሪቨርሳይድ">from the University of California, Riverside, once you've paid the minimum deposit</span></li>
+      </ul>
       <div class="sch-grid">
         <article class="sch-card">
           <h3 data-en="What it covers" data-am="የሚሸፍነው">What it covers</h3>
@@ -132,6 +147,7 @@
           <ul>
             <li data-en="You meet the entry requirements for the programme you choose." data-am="ለመረጡት ፕሮግራም የመግቢያ መስፈርቶችን ያሟላሉ።">You meet the entry requirements for the programme you choose.</li>
             <li data-en="You can pay the part of the fees the scholarship doesn't cover." data-am="ስኮላርሺፑ የማይሸፍነውን የክፍያ ክፍል መክፈል ይችላሉ።">You can pay the part of the fees the scholarship doesn't cover.</li>
+            <li data-en="English: for a bachelor's, a credit in English or an approved English test. For a master's, proof is only needed if your bachelor's wasn't taught in English. Doctoral study needs IELTS 6.5 or Unicaf's English test if your earlier studies weren't in English." data-am="እንግሊዝኛ፦ ለባችለር በእንግሊዝኛ ክሬዲት ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና። ለማስተርስ ማስረጃ የሚያስፈልገው የባችለር ዲግሪዎ በእንግሊዝኛ ካልተሰጠ ብቻ ነው። ለዶክትሬት ቀደም ያለው ትምህርትዎ በእንግሊዝኛ ካልሆነ IELTS 6.5 ወይም የUnicaf የእንግሊዝኛ ፈተና ያስፈልጋል።">English: for a bachelor's, a credit in English or an approved English test. For a master's, proof is only needed if your bachelor's wasn't taught in English. Doctoral study needs IELTS 6.5 or Unicaf's English test if your earlier studies weren't in English.</li>
             <li data-en="Scholarships differ by the country you live in. Students living in Ethiopia can apply." data-am="ስኮላርሺፖች በሚኖሩበት ሀገር ይለያያሉ። በኢትዮጵያ የሚኖሩ ተማሪዎች ማመልከት ይችላሉ።">Scholarships differ by the country you live in. Students living in Ethiopia can apply.</li>
           </ul>
         </article>
@@ -173,7 +189,7 @@
     <section class="campus-gallery" id="campus" aria-labelledby="campus-title"><div class="campus-gallery-head"><div><div class="tag" data-en="A closer look" data-am="በቅርብ ይመልከቱ">A closer look</div><h2 id="campus-title" data-en="See yourself here." data-am="ራስዎን እዚህ ይመልከቱ።">See yourself here.</h2></div><p data-en="People. Places. Possibility." data-am="ሰዎች። ቦታዎች። ዕድል።">People. Places. Possibility.</p></div><div class="campus-gallery-grid"><figure><img src="assets/unicaf-student-community.jpg" alt="Two Unicaf students on campus" loading="lazy"><figcaption data-en="Your people" data-am="የእርስዎ ማኅበረሰብ">Your people</figcaption></figure><figure><img src="assets/unicaf-lab-science.jpg" alt="Unicaf student working in a science laboratory" loading="lazy"><figcaption data-en="Hands-on learning" data-am="በተግባር መማር">Hands-on learning</figcaption></figure><figure><img src="assets/unicaf-campus-aerial.jpg" alt="Aerial view of Unicaf University campus" loading="lazy"><figcaption data-en="A place to grow" data-am="የእድገት ቦታ">A place to grow</figcaption></figure><figure><img src="assets/unicaf-lab-research.jpg" alt="Unicaf student using a microscope in a laboratory" loading="lazy"><figcaption data-en="Explore your field" data-am="ዘርፍዎን ያስሱ">Explore your field</figcaption></figure></div></section>
   </main>
   <footer><a class="brand" href="index.html" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a><span data-en="FSF Consultancy · Connecting people with opportunity" data-am="FSF Consultancy · ሰዎችን ከዕድል ጋር እናገናኛለን">FSF Consultancy · Connecting people with opportunity</span><a class="back" href="index.html" data-en="← FSF home" data-am="← FSF መነሻ">← FSF home</a></footer>
-  <dialog class="modal" id="course-modal" aria-labelledby="modal-title"><div class="modal-head"><div><div class="tag" data-en="Ask FSF about this course" data-am="ስለዚህ ኮርስ FSFን ይጠይቁ">Ask FSF about this course</div><h2 id="modal-title"></h2></div><button class="close-modal" id="close-modal" type="button" aria-label="Close" data-en-label="Close" data-am-label="ዝጋ">×</button></div><div class="modal-body"><p class="modal-description" id="modal-description"></p><form class="lead-form" id="course-enquiry" novalidate><input type="hidden" id="enquiry-course" name="course"><label>
+  <dialog class="modal" id="course-modal" aria-labelledby="modal-title"><div class="modal-head"><div><div class="tag" data-en="Ask FSF about this course" data-am="ስለዚህ ኮርስ FSFን ይጠይቁ">Ask FSF about this course</div><h2 id="modal-title"></h2></div><button class="close-modal" id="close-modal" type="button" aria-label="Close" data-en-label="Close" data-am-label="ዝጋ">×</button></div><div class="modal-body"><p class="modal-description" id="modal-description"></p><details class="modal-req" open><summary data-en="Entry requirements" data-am="የመግቢያ መስፈርቶች">Entry requirements</summary><ul id="req-list"></ul><p class="req-length" id="req-length"></p><p class="req-note" data-en="Summarised from Unicaf University (Zambia). Have certificates from Ethiopia or another country? FSF can check what they count as." data-am="ከUnicaf ዩኒቨርሲቲ (ዛምቢያ) የተጠቃለለ። ከኢትዮጵያ ወይም ከሌላ ሀገር ሰርተፍኬት አለዎት? ምን ያህል ተመጣጣኝ እንደሆኑ FSF ሊያጣራልዎ ይችላል።">Summarised from Unicaf University (Zambia). Have certificates from Ethiopia or another country? FSF can check what they count as.</p></details><form class="lead-form" id="course-enquiry" novalidate><input type="hidden" id="enquiry-course" name="course"><label>
         <span data-en="Full name" data-am="ሙሉ ስም">Full name</span><input name="name" autocomplete="name" required></label><label><span data-en="Phone number" data-am="ስልክ ቁጥር">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label><label class="wide"><span data-en="Email (optional)" data-am="ኢሜይል (አማራጭ)">Email (optional)</span><input name="email" type="email" autocomplete="email"></label><p class="form-notice wide" data-en="Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them." data-am="ዝርዝሮችዎ እንድንከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣሉ። ለማንም አናጋራቸውም።">Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them.</p><button class="submit-enquiry" type="submit" data-en="Send enquiry" data-am="ጥያቄ ይላኩ">Send enquiry</button><p class="form-status wide" id="form-status" role="status" aria-live="polite" hidden></p></form><p class="modal-apply"><span data-en="Ready to apply now?" data-am="አሁን ለማመልከት ዝግጁ ነዎት?">Ready to apply now?</span> <a href="#" data-apply hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a></p></div></dialog>
   <script>
     const programmes=[
@@ -238,6 +254,7 @@
     function openEnquiry(programme){
       document.querySelector('#modal-title').textContent=programme.name;
       document.querySelector('#modal-description').textContent=programme.description;
+      currentProgramme=programme;renderRequirements();
       document.querySelector('#enquiry-course').value=programme.name;document.querySelector('.modal-apply a').dataset.applyCourse=programme.name;
       status.hidden=true;status.classList.remove('error');
       modal.showModal();
@@ -270,7 +287,69 @@
         show(FSF.t("Your enquiry couldn't be sent. Check your internet connection and try again.",'ጥያቄዎ አልተላከም። የኢንተርኔት ግንኙነትዎን አረጋግጠው እንደገና ይሞክሩ።'),true);
       }finally{button.disabled=false;}
     });
-    render();
+    // Entry requirements, summarised from Unicaf University (Zambia)'s offer page (November 2026). [English, Amharic]
+    const ID=["A copy of your passport or national ID.","የፓስፖርት ወይም የብሔራዊ መታወቂያ ቅጂ።"];
+    const REQ={
+      bachelor:[
+        ["A full Grade 12 certificate with 5 O-level credits (C or better), including English, or an equivalent qualification from your country.","5 የO-level ክሬዲቶች (C ወይም ከዚያ በላይ) እንግሊዝኛን ጨምሮ ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
+        ["Have a diploma or advanced diploma? You may be accepted, and a diploma in a related subject may let you start in year 3.","ዲፕሎማ ወይም አድቫንስድ ዲፕሎማ አለዎት? ተቀባይነት ሊያገኙ ይችላሉ፤ በተዛማጅ ዘርፍ ያለ ዲፕሎማ ከ3ኛ ዓመት እንዲጀምሩ ሊያስችልዎ ይችላል።"],
+        ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
+        ID],
+      bachelorMath:[
+        ["A full Grade 12 certificate with 5 O-level credits (C or better), including English and Mathematics, or an equivalent qualification from your country.","እንግሊዝኛ እና ሂሳብን ጨምሮ 5 የO-level ክሬዲቶች (C ወይም ከዚያ በላይ) ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
+        ["Have a diploma or advanced diploma? You may be accepted, and a diploma in a related subject may let you start in year 3.","ዲፕሎማ ወይም አድቫንስድ ዲፕሎማ አለዎት? ተቀባይነት ሊያገኙ ይችላሉ፤ በተዛማጅ ዘርፍ ያለ ዲፕሎማ ከ3ኛ ዓመት እንዲጀምሩ ሊያስችልዎ ይችላል።"],
+        ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
+        ID],
+      master:[
+        ["An accredited bachelor's degree with a Credit or better, or an equivalent qualification. With lower results you can start with Unicaf's Pre-Masters programme.","እውቅና ያለው የባችለር ዲግሪ በክሬዲት ወይም ከዚያ በላይ፣ ወይም ተመጣጣኝ ማስረጃ። ውጤትዎ ዝቅ ያለ ከሆነ በUnicaf የቅድመ-ማስተርስ ፕሮግራም መጀመር ይችላሉ።"],
+        ["Related professional qualifications, or a master's degree you already hold, are also considered.","ተዛማጅ የሙያ ብቃቶች ወይም ያለዎት የማስተርስ ዲግሪም ግምት ውስጥ ይገባሉ።"],
+        ["English: proof of English only if your bachelor's degree wasn't taught in English.","እንግሊዝኛ፦ የእንግሊዝኛ ማስረጃ የሚያስፈልገው የባችለር ዲግሪዎ በእንግሊዝኛ ካልተሰጠ ብቻ ነው።"],
+        ID],
+      doctoral:[
+        ["An accredited master's degree in a related subject. A master's in another subject can be accepted if you have relevant work experience.","በተዛማጅ ዘርፍ እውቅና ያለው የማስተርስ ዲግሪ። በሌላ ዘርፍ ያለ ማስተርስም ተዛማጅ የሥራ ልምድ ካለዎት ተቀባይነት ሊያገኝ ይችላል።"],
+        ["Your master's degree transcripts, an up-to-date CV, two recommendation letters (one academic, one professional) and a research proposal.","የማስተርስ ዲግሪ ትራንስክሪፕቶች፣ ወቅታዊ CV፣ ሁለት የድጋፍ ደብዳቤዎች (አንድ አካዳሚክ፣ አንድ ሙያዊ) እና የምርምር ሐሳብ።"],
+        ["English: if your earlier studies weren't taught in English, IELTS 6.5 (6.5 in writing, no part below 6.0) or Unicaf's English test at the same level.","እንግሊዝኛ፦ ቀደም ያለው ትምህርትዎ በእንግሊዝኛ ካልተሰጠ IELTS 6.5 (በጽሑፍ 6.5፣ ማንኛውም ክፍል ከ6.0 በታች ያልሆነ) ወይም በተመሳሳይ ደረጃ የUnicaf የእንግሊዝኛ ፈተና።"],
+        ID,
+        ["Applicants who meet these requirements are invited to an interview before the final decision.","እነዚህን መስፈርቶች የሚያሟሉ አመልካቾች ከመጨረሻው ውሳኔ በፊት ለቃለ መጠይቅ ይጋበዛሉ።"]],
+      nursing:[
+        ["A full Grade 12 certificate with 5 O-level credits (C or better), including English, Mathematics and a science subject, or an equivalent qualification.","እንግሊዝኛ፣ ሂሳብ እና አንድ የሳይንስ ትምህርትን ጨምሮ 5 የO-level ክሬዲቶች (C ወይም ከዚያ በላይ) ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት፣ ወይም ተመጣጣኝ ማስረጃ።"],
+        ["Already a diploma nurse or midwife? You also need a valid practising certificate, and you may be able to skip some modules.","ዲፕሎማ ያለዎት ነርስ ወይም አዋላጅ ነዎት? የሚሰራ የሙያ ፈቃድም ያስፈልግዎታል፤ አንዳንድ ሞጁሎችን ሊያልፉ ይችላሉ።"],
+        ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
+        ID],
+      mbchb:[
+        ["A-levels in Biology, Chemistry, Mathematics and Physics: start in year 1.","በባዮሎጂ፣ በኬሚስትሪ፣ በሂሳብ እና በፊዚክስ A-level፦ ከ1ኛ ዓመት ይጀምራሉ።"],
+        ["A BSc in Human Biology: start in year 3. A medical-related BSc in Natural Science: start in year 2. A Clinical Officer diploma or BSc in Clinical Sciences: start in year 1.","በሂዩማን ባዮሎጂ BSc፦ ከ3ኛ ዓመት። ከሕክምና ጋር የተያያዘ በናቹራል ሳይንስ BSc፦ ከ2ኛ ዓመት። የክሊኒካል ኦፊሰር ዲፕሎማ ወይም በክሊኒካል ሳይንስ BSc፦ ከ1ኛ ዓመት ይጀምራሉ።"],
+        ["Otherwise: a full Grade 12 certificate with 5 O-level credits including English, Mathematics, Biology, Chemistry and Physics. You first take preparatory courses, then start year 1.","አለበለዚያ፦ እንግሊዝኛ፣ ሂሳብ፣ ባዮሎጂ፣ ኬሚስትሪ እና ፊዚክስን ጨምሮ 5 የO-level ክሬዲቶች ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት። መጀመሪያ የዝግጅት ኮርሶችን ወስደው ከዚያ 1ኛ ዓመትን ይጀምራሉ።"],
+        ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
+        ID]
+    };
+    const LENGTH={bachelor:['4–8 years','4–8 ዓመታት'],bachelorMath:['4–8 years','4–8 ዓመታት'],nursing:['4–8 years','4–8 ዓመታት'],master:['2–5 years','2–5 ዓመታት'],doctoral:['3–6 years','3–6 ዓመታት'],mbchb:['6 years','6 ዓመታት']};
+    function reqKey(p){
+      if(/Nursing/.test(p.name))return 'nursing';
+      if(/MB ChB/.test(p.name))return 'mbchb';
+      if(p.level==='Bachelor')return /Accounting and Finance|^Bachelor of Business Administration$/.test(p.name)?'bachelorMath':'bachelor';
+      return p.level==='Master'?'master':'doctoral';
+    }
+    let currentProgramme=null;
+    function renderRequirements(){
+      if(!currentProgramme)return;
+      const k=reqKey(currentProgramme);
+      document.querySelector('#req-list').innerHTML=REQ[k].map(r=>`<li>${esc(FSF.t(...r))}</li>`).join('');
+      document.querySelector('#req-length').textContent=FSF.t('Typical length: ','የተለመደ የትምህርት ጊዜ፦ ')+FSF.t(...LENGTH[k])+FSF.t(' (online study lets you go at your own pace)',' (የኦንላይን ትምህርት በራስዎ ፍጥነት እንዲማሩ ያስችላል)');
+    }
+    document.addEventListener('fsf:lang',renderRequirements);
+    // Next start date (Unicaf University 2026 intakes: rolling admissions, one start each month).
+    const STARTS=['2026-01-12','2026-02-09','2026-03-09','2026-04-13','2026-05-11','2026-06-08','2026-07-13','2026-08-10','2026-09-14','2026-10-12','2026-11-09','2026-12-14'];
+    function renderNextStart(){
+      const el=document.querySelector('#next-start');if(!el)return;
+      const today=new Date();today.setHours(0,0,0,0);
+      const next=STARTS.map(d=>new Date(d+'T00:00:00')).find(d=>d>=today);
+      if(!next){el.textContent=FSF.t('New start dates every month','በየወሩ አዲስ የመጀመሪያ ቀናት');return;}
+      const en=next.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+      el.textContent=FSF.t(`Next start date: ${en}`,`ቀጣዩ የመጀመሪያ ቀን፦ ${en}`);
+    }
+    document.addEventListener('fsf:lang',renderNextStart);
+    render();renderNextStart();
   </script>
 </body>
 </html>
