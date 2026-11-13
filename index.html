@@ -8,7 +8,10 @@
   <meta name="description" content="FSF helps students choose a Unicaf University course, apply, and ask about scholarships, from the first question to the first class.">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@1&amp;display=swap">
+  <!-- Font loads without holding up the page: text shows at once in a fallback font, then swaps. -->
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@1&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@1&amp;display=swap"></noscript>
+  <script>(function(d){var c=d.documentElement.classList,n=navigator,k=n.connection||{};c.add("js");if(k.saveData||/(^|-)2g$/.test(k.effectiveType||"")||(n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2))c.add("lite")})(document)</script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FSF Consultancy">
   <meta property="og:title" content="FSF — Your degree, with FSF beside you">
@@ -36,8 +39,8 @@
     .wrap{max-width:1180px;margin:0 auto}
 
     /* Nav — fixed so it is always reachable */
-    .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;width:min(1160px,calc(100% - 32px));height:70px;padding:0 clamp(16px,2.4vw,30px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(20,20,20,.72);border:1px solid #f0efef30;border-radius:999px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--paper);transition:background .25s,box-shadow .25s}
-    .nav.scrolled{background:rgba(20,20,20,.94);box-shadow:0 10px 34px #14141440}
+    .nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;width:min(1160px,calc(100% - 32px));height:70px;padding:0 clamp(16px,2.4vw,30px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(20,20,20,.92);border:1px solid #f0efef30;border-radius:999px;color:var(--paper);transition:background .25s,box-shadow .25s}
+    .nav.scrolled{background:rgba(20,20,20,.97);box-shadow:0 10px 34px #14141440}
     .brand{display:inline-flex;align-items:center}.brand img{display:block;width:58px;height:40px;object-fit:contain}
     .nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,34px);font-size:14px}
     .nav-links a{transition:opacity .2s}.nav-links a:hover{opacity:.72}
@@ -73,7 +76,7 @@
     /* Ticker */
     .ticker{overflow:hidden;background:var(--navy);color:var(--paper);padding:12px 0}
     .ticker-track{display:flex;width:max-content;animation:ticker 40s linear infinite}
-    .ticker:hover .ticker-track{animation-play-state:paused}
+    .ticker:hover .ticker-track,.ticker.offscreen .ticker-track{animation-play-state:paused}
     .ticker-track a{display:flex;align-items:center;gap:36px;padding:0 24px;font-size:14px;font-weight:650;white-space:nowrap}
     .ticker-track a:after{content:"✳";font-size:14px;opacity:.7}
     @keyframes ticker{to{transform:translateX(-50%)}}
@@ -163,8 +166,58 @@
     footer .brand img{width:52px;height:36px}
     footer nav{display:flex;gap:20px;flex-wrap:wrap}
 
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-    .reveal.visible{opacity:1;transform:none}
+    /* Motion. Only opacity and transform are animated (cheap on any phone). */
+    :root{--ease-out:cubic-bezier(.2,.7,.2,1)}
+    .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s var(--ease-out)}
+    .js .reveal.visible{opacity:1;transform:none}
+
+    /* M1 hero entrance: plays once on load, no script needed */
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow,.hero h1,.hero p,.hero .actions,.hero .partner{animation:rise .7s var(--ease-out) both}
+    .hero h1{animation-delay:.08s}.hero p{animation-delay:.22s}.hero .actions{animation-delay:.32s}.hero .partner{animation:fade .8s ease .5s both}
+
+    /* M2 steps arrive one after another; a line joins them on desktop */
+    .js .how .step{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s var(--ease-out)}
+    .js .how.visible .step{opacity:1;transform:none}
+    .js .how.visible .step:nth-child(2){transition-delay:.14s}.js .how.visible .step:nth-child(3){transition-delay:.28s}
+    .js .how .step:before{transform:scale(.6);transition:transform .45s cubic-bezier(.3,1.5,.5,1) .15s}
+    .js .how.visible .step:before{transform:none}
+    .js .how.visible .step:nth-child(2):before{transition-delay:.3s}.js .how.visible .step:nth-child(3):before{transition-delay:.45s}
+    @media(min-width:901px){
+      .steps{position:relative}
+      .steps:after{content:"";position:absolute;z-index:1;height:2px;top:calc(clamp(24px,3vw,36px) + 22px);left:calc(clamp(24px,3vw,36px) + 46px);width:calc((100% - 28px)/3*2 + 28px - 46px);background:linear-gradient(90deg,var(--navy),#2842a055);transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease-out) .35s;pointer-events:none}
+      .js .how.visible .steps:after{transform:scaleX(1)}
+      .step:before{position:relative;z-index:2}
+    }
+
+    /* M3 buttons answer the finger: quick press, arrow nudge */
+    .button:active,.nav-cta:active,.text-link:active,.home-banner:active{transform:scale(.97);transition-duration:.08s}
+    .button .arrow{display:inline-block;transition:transform .25s var(--ease-out)}
+    .button:hover .arrow{transform:translateX(4px)}
+    .button:hover .arrow-down{transform:translateY(3px)}
+    .button:hover .arrow-up{transform:translateY(-3px)}
+    .button:hover .arrow-out{transform:translate(3px,-3px)}
+
+    /* M4 FAQ answers slide open (newer browsers); text fades in everywhere */
+    :root{interpolate-size:allow-keywords}
+    .faq details::details-content{block-size:0;overflow:hidden;transition:block-size .3s var(--ease-out),content-visibility .3s allow-discrete}
+    .faq details[open]::details-content{block-size:auto}
+    .faq details[open] p{animation:rise .35s var(--ease-out) both}
+
+    /* M5 sending and sent */
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .button .spinner{width:16px;height:16px;border:2px solid #f0efef55;border-top-color:var(--paper);border-radius:50%;animation:spin .7s linear infinite}
+    .form-status.success{display:flex;gap:12px;align-items:flex-start;animation:rise .4s var(--ease-out) both}
+    .form-status .tick{flex:none;width:24px;height:24px;margin-top:-1px}
+    .form-status .tick circle{fill:var(--navy)}
+    .form-status .tick path{fill:none;stroke:var(--paper);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:16;stroke-dashoffset:16;animation:draw .4s ease-out .15s forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+
+    /* Lighter mode for data saver / older phones: no entrance or scroll motion */
+    .lite .hero *,.lite .how .step,.lite .how .step:before,.lite .steps:after{animation:none!important;transition:none!important}
+    .lite .reveal,.lite .how .step,.lite .how .step:before{opacity:1!important;transform:none!important}
+    .lite .steps:after{transform:scaleX(1)!important}
 
     @media(max-width:900px){
       .steps{grid-template-columns:1fr}
@@ -176,7 +229,8 @@
       .brand img{width:50px;height:34px}
       .menu-toggle{display:block}
       .nav-links{display:none;position:absolute;top:70px;left:0;right:0;padding:18px;background:var(--paper);color:var(--ink);border:1px solid #2842a030;border-radius:18px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 16px 40px #14141430;font-size:16px}
-      .nav-links.open{display:flex}
+      .nav-links.open{display:flex;animation:menu-in .2s var(--ease-out) both}
+      @keyframes menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
       .nav-links a{padding:12px 8px}
       .nav-cta{text-align:center;color:var(--paper);margin-top:6px}
       .nav-links :focus-visible{outline-color:var(--navy)}
@@ -190,7 +244,7 @@
     }
     [lang="am"] .eyebrow,[lang="am"] .section-tag{letter-spacing:.02em;text-transform:none}
     [lang="am"] h1,[lang="am"] h2,[lang="am"] h3{letter-spacing:0;line-height:1.15}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal,.js .reveal,.js .how .step,.js .how .step:before{opacity:1;transform:none}.steps:after{transform:none!important}.form-status .tick path{stroke-dashoffset:0}}
   </style>
 </head>
 <!--
@@ -221,7 +275,7 @@
         <p data-en="We help you choose a Unicaf University course, apply, and ask about scholarships — from your first question to your first class." data-am="የUnicaf ዩኒቨርሲቲ ኮርስ እንዲመርጡ፣ እንዲያመለክቱ እና ስለ ስኮላርሺፕ እንዲጠይቁ እንረዳዎታለን — ከመጀመሪያ ጥያቄዎ እስከ መጀመሪያ ክፍልዎ።">We help you choose a Unicaf University course, apply, and ask about scholarships — from your first question to your first class.</p>
         <div class="actions">
           <a class="button button-light" href="unicaf.html"><span data-en="Explore 41 courses" data-am="41 ኮርሶችን ያስሱ">Explore 41 courses</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a class="button button-ghost" href="#contact"><span data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</span><span class="arrow" aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="#contact"><span data-en="Talk to FSF" data-am="FSFን ያነጋግሩ">Talk to FSF</span><span class="arrow arrow-down" aria-hidden="true">↓</span></a>
         </div>
         <div class="partner"><img src="assets/unicaf-university-logo.png" alt="Unicaf University"><span data-en="Official partner of Unicaf University, Zambia" data-am="የUnicaf ዩኒቨርሲቲ ዛምቢያ ይፋዊ አጋር">Official partner of Unicaf University, Zambia</span></div>
       </div>
@@ -257,7 +311,7 @@
             <p data-en="When you're ready, we guide you through the application and stay in touch until you enrol." data-am="ዝግጁ ሲሆኑ በማመልከቻው ሂደት እንመራዎታለን፤ እስኪመዘገቡም ድረስ አብረንዎ እንቆያለን።">When you're ready, we guide you through the application and stay in touch until you enrol.</p>
           </li>
         </ol>
-        <div class="how-cta"><a class="button" href="#contact"><span data-en="Start with step 1: ask us" data-am="በእርምጃ 1 ይጀምሩ፤ ይጠይቁን">Start with step 1: ask us</span><span class="arrow" aria-hidden="true">↓</span></a></div>
+        <div class="how-cta"><a class="button" href="#contact"><span data-en="Start with step 1: ask us" data-am="በእርምጃ 1 ይጀምሩ፤ ይጠይቁን">Start with step 1: ask us</span><span class="arrow arrow-down" aria-hidden="true">↓</span></a></div>
       </div>
     </section>
 
@@ -281,7 +335,7 @@
             </div>
           </div>
         </div>
-        <button type="button" class="home-banner" data-apply aria-label="Apply for the Unicaf Scholarship of up to 82%"><img src="assets/unicaf-fsf-scholarship-banner.png" width="1201" height="629" loading="lazy" alt="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship. Study online for an internationally recognised bachelor's, master's or doctoral degree. Apply now."></button>
+        <button type="button" class="home-banner" data-apply aria-label="Apply for the Unicaf Scholarship of up to 82%"><picture><source srcset="assets/unicaf-fsf-scholarship-banner.webp" type="image/webp"><img src="assets/unicaf-fsf-scholarship-banner.png" width="1201" height="629" loading="lazy" decoding="async" alt="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship. Study online for an internationally recognised bachelor's, master's or doctoral degree. Apply now."></picture></button>
       </div>
     </section>
 
@@ -292,7 +346,7 @@
         <p data-en="FSF also helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities." data-am="FSF ንግዶች ትክክለኛ ሰዎችን እንዲያገኙ እና ጠቃሚ ግንኙነቶችን እንዲፈጥሩ ይረዳል። ድርጅቶችን በማገናኘት ለውይይት፣ ለትብብር እና ለአዳዲስ ዕድሎች መንገድ እንከፍታለን።">FSF also helps businesses find the right people and build useful connections. We bring organisations together, opening the door to conversations, collaboration and new opportunities.</p>
         <div class="chips"><span data-en="Find the right connections" data-am="ትክክለኛ ግንኙነቶችን ያግኙ">Find the right connections</span><span data-en="Start useful conversations" data-am="ጠቃሚ ውይይቶችን ይጀምሩ">Start useful conversations</span><span data-en="Explore new markets" data-am="አዳዲስ ገበያዎችን ያስሱ">Explore new markets</span></div>
       </div>
-      <a class="button" href="#contact" data-topic="business"><span data-en="Talk to FSF about your business" data-am="ስለ ንግድዎ FSFን ያነጋግሩ">Talk to FSF about your business</span><span class="arrow" aria-hidden="true">↓</span></a>
+      <a class="button" href="#contact" data-topic="business"><span data-en="Talk to FSF about your business" data-am="ስለ ንግድዎ FSFን ያነጋግሩ">Talk to FSF about your business</span><span class="arrow arrow-down" aria-hidden="true">↓</span></a>
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
@@ -301,7 +355,7 @@
         <h2 id="contact-title" data-en="Ask us anything. *We'll help you work it out.*" data-am="ማንኛውንም ይጠይቁን። *መፍትሔውን አብረን እናገኛለን።*">Ask us anything. <em>We'll help you work it out.</em></h2>
         <p data-en="Send a message and the FSF team will get back to you. Whether you're choosing a course or growing a business, the first conversation is where it starts." data-am="መልዕክት ይላኩ፤ የFSF ቡድን ያነጋግርዎታል። ኮርስ እየመረጡም ይሁን ንግድዎን እያሳደጉ፣ ሁሉም የሚጀምረው በመጀመሪያው ውይይት ነው።">Send a message and the FSF team will get back to you. Whether you're choosing a course or growing a business, the first conversation is where it starts.</p>
         <div class="contact-direct">
-          <a class="button button-whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener" hidden><span data-en="Chat on WhatsApp" data-am="በWhatsApp ያውሩ">Chat on WhatsApp</span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-whatsapp" data-whatsapp-link href="#" target="_blank" rel="noopener" hidden><span data-en="Chat on WhatsApp" data-am="በWhatsApp ያውሩ">Chat on WhatsApp</span><span class="arrow arrow-out" aria-hidden="true">↗</span></a>
           <a class="text-link" href="https://www.instagram.com/fsfconsult/" target="_blank" rel="noopener" data-en="Or message us on Instagram @fsfconsult ↗" data-am="ወይም በInstagram @fsfconsult መልዕክት ይላኩልን ↗">Or message us on Instagram @fsfconsult ↗</a>
         </div>
       </div>
@@ -329,7 +383,7 @@
         <div class="section-tag" data-en="Questions" data-am="ጥያቄዎች">Questions</div>
         <h2 id="faq-title" data-en="Good to *know.*" data-am="ማወቅ *ጠቃሚ ነው።*">Good to <em>know.</em></h2>
         <p data-en="Can't find your answer? Ask us directly." data-am="መልስዎን አላገኙም? በቀጥታ ይጠይቁን።">Can't find your answer? Ask us directly.</p>
-        <a class="button button-ghost" href="#contact"><span data-en="Ask a question" data-am="ጥያቄ ይጠይቁ">Ask a question</span><span class="arrow" aria-hidden="true">↑</span></a>
+        <a class="button button-ghost" href="#contact"><span data-en="Ask a question" data-am="ጥያቄ ይጠይቁ">Ask a question</span><span class="arrow arrow-up" aria-hidden="true">↑</span></a>
       </div>
       <div class="faq-list">
         <details>
@@ -376,6 +430,25 @@
     <span>© <span id="year"></span> FSF Consultancy</span>
   </footer>
 
+  <script>
+    (function () {
+      // Fade sections in as they scroll into view (inline, so a slow network never leaves them hidden).
+      var reveals = document.querySelectorAll('.reveal');
+      var lite = document.documentElement.classList.contains('lite');
+      if (lite || !('IntersectionObserver' in window)) { reveals.forEach(function (el) { el.classList.add('visible'); }); }
+      else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.08 });
+        reveals.forEach(function (el) { io.observe(el); });
+      }
+      // Pause the scholarship strip while it is off screen.
+      var ticker = document.querySelector('.ticker');
+      if (ticker && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) { ticker.classList.toggle('offscreen', !entries[0].isIntersecting); }).observe(ticker);
+      }
+    })();
+  </script>
   <script src="assets/site.js"></script>
   <script src="assets/apply.js"></script>
   <script>
@@ -402,9 +475,13 @@
     form.querySelectorAll('input[name=topic]').forEach(r => r.addEventListener('change', () => setTopic(r.value)));
     document.querySelectorAll('a[data-topic]').forEach(a => a.addEventListener('click', () => setTopic(a.dataset.topic)));
 
-    function show(text, isError) {
+    function show(text, isError, isSuccess) {
       status.textContent = text;
       status.classList.toggle('error', !!isError);
+      status.classList.toggle('success', !!isSuccess);
+      if (isSuccess) {
+        status.insertAdjacentHTML('afterbegin', '<svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12"/><path d="M7 12.5l3.2 3.2L17 9"/></svg>');
+      }
       status.hidden = false;
     }
 
@@ -417,8 +494,13 @@
         return;
       }
       const button = form.querySelector('button[type=submit]');
+      const label = button.querySelector('[data-en]');
+      const arrow = button.querySelector('.arrow');
       button.disabled = true;
-      show(FSF.t('Sending…', 'በመላክ ላይ…'));
+      label.textContent = FSF.t('Sending…', 'በመላክ ላይ…');
+      arrow.hidden = true;
+      arrow.insertAdjacentHTML('afterend', '<span class="spinner" aria-hidden="true"></span>');
+      status.hidden = true;
       try {
         const data = new FormData(form);
         const topic = data.get('topic');
@@ -430,7 +512,7 @@
         show(FSF.t(
           `Thank you, ${name}. Your message is on its way to the FSF team. If you don't hear back within a few days, message us on Instagram @fsfconsult.`,
           `እናመሰግናለን ${name}። መልዕክትዎ ወደ FSF ቡድን ተልኳል። በጥቂት ቀናት ውስጥ ምላሽ ካላገኙ በInstagram @fsfconsult ያግኙን።`
-        ));
+        ), false, true);
         form.reset();
         setTopic('student');
       } catch (error) {
@@ -440,6 +522,9 @@
         ), true);
       } finally {
         button.disabled = false;
+        label.textContent = FSF.t(label.dataset.en, label.dataset.am);
+        arrow.hidden = false;
+        button.querySelector('.spinner')?.remove();
       }
     });
   </script>
