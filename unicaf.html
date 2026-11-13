@@ -44,6 +44,8 @@
     [lang="am"] .tag{letter-spacing:.02em;text-transform:none}
     [lang="am"] h1,[lang="am"] h2{letter-spacing:0;line-height:1.15}
     @media(max-width:620px){.top{padding:0 12px 0 16px}.back{display:none}.top-cta{padding:9px 13px;font-size:13px}.language-toggle{padding:8px 11px;font-size:12px}}
+    .modal-apply{margin:22px 0 0;padding-top:18px;border-top:1px solid #2842a030;font-size:14px;color:var(--muted)}
+    .modal-apply a{color:var(--navy);font-weight:750;text-decoration:underline;text-underline-offset:3px}
     /* Scholarship section */
     .scholarship{padding:clamp(70px,9vw,110px) clamp(20px,6vw,82px);background:var(--ink);color:var(--paper);scroll-margin-top:80px}
     .scholarship .tag{color:#9fb1f0}
@@ -75,8 +77,7 @@
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
-<!-- Scholarship application link (tracking link): put it in data-scholarship-link below to show the "Apply on Unicaf's site" button -->
-<body data-scholarship-link="">
+<body>
   <header class="top nav">
     <a class="brand" href="index.html" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a>
     <div class="top-right">
@@ -160,8 +161,8 @@
         </div>
         <div class="sch-buttons">
           <a class="sch-btn" href="index.html#contact" data-en="Ask FSF to help me apply →" data-am="FSF እንዲያግዘኝ እጠይቃለሁ →">Ask FSF to help me apply →</a>
-          <!-- Scholarship application link: put the URL in data-scholarship-link on <body>; this button stays hidden until then -->
-          <a class="sch-btn sch-btn-ghost" data-apply-link href="#" target="_blank" rel="noopener" hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a>
+          <!-- Opens the "Before you apply" popup (assets/apply.js), which holds the Unicaf tracking link -->
+          <a class="sch-btn sch-btn-ghost" data-apply href="#" hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a>
         </div>
       </div>
       <p class="source-note" data-en="Based on Unicaf&#x27;s scholarship pages and Unicaf University&#x27;s offer for FSF (November 2026). Unicaf doesn&#x27;t publish deadlines or a full document list, so ask FSF for current details." data-am="ከUnicaf የስኮላርሺፕ ገጾች እና Unicaf ዩኒቨርሲቲ ለFSF ካቀረበው ቅናሽ የተወሰደ (ኖቬምበር 2026)። Unicaf የጊዜ ገደቦችን ወይም ሙሉ የሰነድ ዝርዝርን አያወጣም፤ ወቅታዊ መረጃ ለማግኘት FSFን ይጠይቁ።">Based on Unicaf's scholarship pages and Unicaf University's offer for FSF (November 2026). Unicaf doesn't publish deadlines or a full document list, so ask FSF for current details.</p>
@@ -173,7 +174,7 @@
   </main>
   <footer><a class="brand" href="index.html" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a><span data-en="FSF Consultancy · Connecting people with opportunity" data-am="FSF Consultancy · ሰዎችን ከዕድል ጋር እናገናኛለን">FSF Consultancy · Connecting people with opportunity</span><a class="back" href="index.html" data-en="← FSF home" data-am="← FSF መነሻ">← FSF home</a></footer>
   <dialog class="modal" id="course-modal" aria-labelledby="modal-title"><div class="modal-head"><div><div class="tag" data-en="Ask FSF about this course" data-am="ስለዚህ ኮርስ FSFን ይጠይቁ">Ask FSF about this course</div><h2 id="modal-title"></h2></div><button class="close-modal" id="close-modal" type="button" aria-label="Close" data-en-label="Close" data-am-label="ዝጋ">×</button></div><div class="modal-body"><p class="modal-description" id="modal-description"></p><form class="lead-form" id="course-enquiry" novalidate><input type="hidden" id="enquiry-course" name="course"><label>
-        <span data-en="Full name" data-am="ሙሉ ስም">Full name</span><input name="name" autocomplete="name" required></label><label><span data-en="Phone number" data-am="ስልክ ቁጥር">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label><label class="wide"><span data-en="Email (optional)" data-am="ኢሜይል (አማራጭ)">Email (optional)</span><input name="email" type="email" autocomplete="email"></label><p class="form-notice wide" data-en="Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them." data-am="ዝርዝሮችዎ እንድንከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣሉ። ለማንም አናጋራቸውም።">Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them.</p><button class="submit-enquiry" type="submit" data-en="Send enquiry" data-am="ጥያቄ ይላኩ">Send enquiry</button><p class="form-status wide" id="form-status" role="status" aria-live="polite" hidden></p></form></div></dialog>
+        <span data-en="Full name" data-am="ሙሉ ስም">Full name</span><input name="name" autocomplete="name" required></label><label><span data-en="Phone number" data-am="ስልክ ቁጥር">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label><label class="wide"><span data-en="Email (optional)" data-am="ኢሜይል (አማራጭ)">Email (optional)</span><input name="email" type="email" autocomplete="email"></label><p class="form-notice wide" data-en="Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them." data-am="ዝርዝሮችዎ እንድንከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣሉ። ለማንም አናጋራቸውም።">Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them.</p><button class="submit-enquiry" type="submit" data-en="Send enquiry" data-am="ጥያቄ ይላኩ">Send enquiry</button><p class="form-status wide" id="form-status" role="status" aria-live="polite" hidden></p></form><p class="modal-apply"><span data-en="Ready to apply now?" data-am="አሁን ለማመልከት ዝግጁ ነዎት?">Ready to apply now?</span> <a href="#" data-apply hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a></p></div></dialog>
   <script>
     const programmes=[
       {name:'Master of Arts in English Literature',level:'Master',mode:'Online',field:'Arts & humanities',description:'Explore literary works across genres, periods and cultures while developing advanced interpretation, critical analysis and literary theory skills.'},
@@ -220,6 +221,7 @@
     ];
   </script>
   <script src="assets/site.js"></script>
+  <script src="assets/apply.js"></script>
   <script>
     const grid=document.querySelector('#course-grid'),search=document.querySelector('#course-search'),level=document.querySelector('#level-filter'),mode=document.querySelector('#mode-filter'),count=document.querySelector('#result-count'),modal=document.querySelector('#course-modal'),clear=document.querySelector('#clear-filters'),status=document.querySelector('#form-status');
     const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -236,7 +238,7 @@
     function openEnquiry(programme){
       document.querySelector('#modal-title').textContent=programme.name;
       document.querySelector('#modal-description').textContent=programme.description;
-      document.querySelector('#enquiry-course').value=programme.name;
+      document.querySelector('#enquiry-course').value=programme.name;document.querySelector('.modal-apply a').dataset.applyCourse=programme.name;
       status.hidden=true;status.classList.remove('error');
       modal.showModal();
       modal.querySelector('input[name=name]').focus();
@@ -268,8 +270,6 @@
         show(FSF.t("Your enquiry couldn't be sent. Check your internet connection and try again.",'ጥያቄዎ አልተላከም። የኢንተርኔት ግንኙነትዎን አረጋግጠው እንደገና ይሞክሩ።'),true);
       }finally{button.disabled=false;}
     });
-    const applyLink=document.body.dataset.scholarshipLink.trim();
-    if(applyLink)document.querySelectorAll('[data-apply-link]').forEach(a=>{a.href=applyLink;a.hidden=false;});
     render();
   </script>
 </body>
