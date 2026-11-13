@@ -44,10 +44,39 @@
     [lang="am"] .tag{letter-spacing:.02em;text-transform:none}
     [lang="am"] h1,[lang="am"] h2{letter-spacing:0;line-height:1.15}
     @media(max-width:620px){.top{padding:0 12px 0 16px}.back{display:none}.top-cta{padding:9px 13px;font-size:13px}.language-toggle{padding:8px 11px;font-size:12px}}
+    /* Scholarship section */
+    .scholarship{padding:clamp(70px,9vw,110px) clamp(20px,6vw,82px);background:var(--ink);color:var(--paper);scroll-margin-top:80px}
+    .scholarship .tag{color:#9fb1f0}
+    .sch-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:34px;flex-wrap:wrap}
+    .sch-head h2{font-size:clamp(36px,5.4vw,66px);line-height:.98;letter-spacing:-.06em;margin:14px 0 0}
+    .sch-head p{max-width:460px;font-size:16px;line-height:1.6;margin:0;color:#f0efefd0}
+    .sch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .sch-card{padding:clamp(22px,2.6vw,30px);border:1px solid #f0efef2a;border-radius:16px;background:#ffffff08}
+    .sch-card h3,.sch-steps-title{font-size:21px;letter-spacing:-.03em;margin:0 0 16px}
+    .sch-card ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+    .sch-card li{position:relative;padding-left:22px;font-size:15px;line-height:1.55;color:#f0efefd8}
+    .sch-card li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:#6f86e0}
+    .sch-steps-wrap{margin-top:12px;padding:clamp(22px,2.6vw,30px);border:1px solid #f0efef2a;border-radius:16px}
+    .sch-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;counter-reset:s}
+    .sch-steps li{counter-increment:s;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#f0efefd8}
+    .sch-steps li:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--navy);color:var(--paper);font-weight:760;margin-bottom:6px}
+    .sch-steps strong{color:var(--paper);font-size:17px}
+    .sch-cta{margin-top:12px;padding:clamp(22px,2.6vw,30px);border-radius:16px;background:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    .sch-cta strong{font-size:21px;letter-spacing:-.03em}
+    .sch-cta p{margin:8px 0 0;max-width:560px;font-size:15px;line-height:1.55;color:#f0efefe0}
+    .sch-buttons{display:flex;gap:10px;flex-wrap:wrap}
+    .sch-btn{padding:14px 18px;border-radius:12px;background:var(--paper);color:var(--navy);font-size:14px;font-weight:750;white-space:nowrap}
+    .sch-btn-ghost{background:transparent;color:var(--paper);border:1px solid #f0efefa0}
+    .scholarship .source-note{color:#f0efefa8}
+    .hero-links{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+    .hero-links .hero-jump{margin-top:0}
+    @media(max-width:900px){.sch-grid,.sch-steps{grid-template-columns:1fr}}
+    @media(max-width:620px){.sch-cta{align-items:flex-start;flex-direction:column}.sch-btn{white-space:normal}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
-<body>
+<!-- Scholarship application link (tracking link): put it in data-scholarship-link below to show the "Apply on Unicaf's site" button -->
+<body data-scholarship-link="">
   <header class="top nav">
     <a class="brand" href="index.html" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a>
     <div class="top-right">
@@ -62,7 +91,7 @@
       <div class="tag brand-case" data-en="Courses · Unicaf University, Zambia" data-am="ኮርሶች · Unicaf ዩኒቨርሲቲ፣ ዛምቢያ">Courses · Unicaf University, Zambia</div>
       <h1 data-en="Find the course that *moves you forward.*" data-am="ወደፊት የሚያራምድዎትን *ኮርስ ያግኙ።*">Find the course that <em>moves you forward.</em></h1>
       <p data-en="Search 41 programmes, then tap any course to ask FSF about it. We'll help with the application and scholarship questions." data-am="41 ፕሮግራሞችን ይፈልጉ፤ ከዚያም ስለ ማንኛውም ኮርስ FSFን ለመጠየቅ ይጫኑት። በማመልከቻ እና በስኮላርሺፕ ጥያቄዎች እንረዳዎታለን።">Search 41 programmes, then tap any course to ask FSF about it. We'll help with the application and scholarship questions.</p>
-      <a class="hero-jump" href="#catalogue" data-en="Start searching ↓" data-am="መፈለግ ይጀምሩ ↓">Start searching ↓</a>
+      <div class="hero-links"><a class="hero-jump" href="#catalogue" data-en="Start searching ↓" data-am="መፈለግ ይጀምሩ ↓">Start searching ↓</a><a class="hero-jump" href="#scholarships" data-en="Scholarships ↓" data-am="ስኮላርሺፖች ↓">Scholarships ↓</a></div>
       <span class="orbit" aria-hidden="true"></span>
     </section>
 
@@ -77,6 +106,65 @@
       <p class="result-count" id="result-count" aria-live="polite"></p>
       <div class="course-grid" id="course-grid"></div>
       <p class="source-note" data-en="Programme names and study modes follow Unicaf University's Zambia Programme Finder. Course summaries are short paraphrases of programme aims. Availability, entry requirements and scholarship eligibility can change, so ask FSF to confirm current details." data-am="የፕሮግራም ስሞች እና የትምህርት መንገዶች የUnicaf ዩኒቨርሲቲ የዛምቢያ ፕሮግራም መፈለጊያን ይከተላሉ። የኮርስ ማጠቃለያዎች የፕሮግራሞቹን ዓላማ በአጭሩ ያቀርባሉ። ተገኝነት፣ የመግቢያ መስፈርቶች እና የስኮላርሺፕ ብቁነት ሊለወጡ ስለሚችሉ ወቅታዊ መረጃውን FSFን ይጠይቁ።">Programme names and study modes follow Unicaf University's Zambia Programme Finder. Course summaries are short paraphrases of programme aims. Availability, entry requirements and scholarship eligibility can change, so ask FSF to confirm current details.</p>
+    </section>
+
+    <section class="scholarship" id="scholarships" aria-labelledby="scholarship-title">
+      <div class="sch-head">
+        <div>
+          <div class="tag" data-en="Unicaf Scholarship" data-am="የUnicaf ስኮላርሺፕ">Unicaf Scholarship</div>
+          <h2 id="scholarship-title" data-en="Pay less for *your degree.*" data-am="ለዲግሪዎ *ያነሰ ይክፈሉ።*">Pay less for <em>your degree.</em></h2>
+        </div>
+        <p data-en="The Unicaf Scholarship lowers the tuition fees for bachelor's, master's and doctoral degrees. It's aimed at talented students who need financial support to study." data-am="የUnicaf ስኮላርሺፕ ለባችለር፣ ለማስተርስ እና ለዶክትሬት ዲግሪዎች የትምህርት ክፍያን ይቀንሳል። ለመማር የገንዘብ ድጋፍ ለሚያስፈልጋቸው ጎበዝ ተማሪዎች የታሰበ ነው።">The Unicaf Scholarship lowers the tuition fees for bachelor's, master's and doctoral degrees. It's aimed at talented students who need financial support to study.</p>
+      </div>
+
+      <div class="sch-grid">
+        <article class="sch-card">
+          <h3 data-en="What it covers" data-am="የሚሸፍነው">What it covers</h3>
+          <ul>
+            <li data-en="It pays part of your tuition. You pay the rest, and payment plans are available." data-am="የትምህርት ክፍያዎን የተወሰነ ክፍል ይሸፍናል። ቀሪውን እርስዎ ይከፍላሉ፤ የክፍያ ዕቅዶችም አሉ።">It pays part of your tuition. You pay the rest, and payment plans are available.</li>
+            <li data-en="How much you save depends on the programme and the scholarship level you qualify for." data-am="የሚቆጥቡት መጠን በፕሮግራሙ እና ብቁ በሚሆኑበት የስኮላርሺፕ ደረጃ ይወሰናል።">How much you save depends on the programme and the scholarship level you qualify for.</li>
+            <li data-en="An adviser gives you the exact fees after you apply. FSF can help you understand them." data-am="ካመለከቱ በኋላ አማካሪ ትክክለኛውን ክፍያ ይነግርዎታል። FSF እንዲረዱት ሊያግዝዎት ይችላል።">An adviser gives you the exact fees after you apply. FSF can help you understand them.</li>
+          </ul>
+        </article>
+        <article class="sch-card">
+          <h3 data-en="Who can apply" data-am="ማን ማመልከት ይችላል">Who can apply</h3>
+          <ul>
+            <li data-en="You meet the entry requirements for the programme you choose." data-am="ለመረጡት ፕሮግራም የመግቢያ መስፈርቶችን ያሟላሉ።">You meet the entry requirements for the programme you choose.</li>
+            <li data-en="You can pay the part of the fees the scholarship doesn't cover." data-am="ስኮላርሺፑ የማይሸፍነውን የክፍያ ክፍል መክፈል ይችላሉ።">You can pay the part of the fees the scholarship doesn't cover.</li>
+            <li data-en="Scholarships differ by the country you live in. Students living in Ethiopia can apply." data-am="ስኮላርሺፖች በሚኖሩበት ሀገር ይለያያሉ። በኢትዮጵያ የሚኖሩ ተማሪዎች ማመልከት ይችላሉ።">Scholarships differ by the country you live in. Students living in Ethiopia can apply.</li>
+          </ul>
+        </article>
+        <article class="sch-card">
+          <h3 data-en="Good to know" data-am="ማወቅ ያለብዎት">Good to know</h3>
+          <ul>
+            <li data-en="Unicaf University in Zambia is accredited by Zambia's Higher Education Authority (HEA) and by the British Accreditation Council (BAC)." data-am="Unicaf ዩኒቨርሲቲ በዛምቢያ በዛምቢያ ከፍተኛ ትምህርት ባለሥልጣን (HEA) እና በብሪቲሽ አክሬዲቴሽን ካውንስል (BAC) እውቅና አግኝቷል።">Unicaf University in Zambia is accredited by Zambia's Higher Education Authority (HEA) and by the British Accreditation Council (BAC).</li>
+            <li data-en="Online study is flexible: you study around work and family, as long as you keep up with your deadlines." data-am="የኦንላይን ትምህርት ተለዋዋጭ ነው፤ የጊዜ ገደቦችዎን እስካከበሩ ድረስ ከሥራ እና ከቤተሰብ ጋር አጣጥመው መማር ይችላሉ።">Online study is flexible: you study around work and family, as long as you keep up with your deadlines.</li>
+            <li data-en="A few programmes, such as Nursing and Medicine, are only taught on campus in Lusaka." data-am="እንደ ነርሲንግ እና ሕክምና ያሉ ጥቂት ፕሮግራሞች የሚሰጡት በሉሳካ ካምፓስ ብቻ ነው።">A few programmes, such as Nursing and Medicine, are only taught on campus in Lusaka.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sch-steps-wrap">
+        <h3 class="sch-steps-title" data-en="How applying works" data-am="ማመልከቻው እንዴት ይሠራል">How applying works</h3>
+        <ol class="sch-steps">
+          <li><strong data-en="Fill in a short form" data-am="አጭር ቅጽ ይሙሉ">Fill in a short form</strong><span data-en="Your name, email, phone, country, the programme you want, and your current level of education (for example, a high school diploma or a bachelor's degree). An adviser then calls you." data-am="ስምዎ፣ ኢሜይልዎ፣ ስልክዎ፣ ሀገርዎ፣ የሚፈልጉት ፕሮግራም እና አሁን ያለዎት የትምህርት ደረጃ (ለምሳሌ የሁለተኛ ደረጃ ዲፕሎማ ወይም የባችለር ዲግሪ)። ከዚያም አማካሪ ይደውልልዎታል።">Your name, email, phone, country, the programme you want, and your current level of education (for example, a high school diploma or a bachelor's degree). An adviser then calls you.</span></li>
+          <li><strong data-en="Send your documents" data-am="ሰነዶችዎን ይላኩ">Send your documents</strong><span data-en="Your certificates are checked to confirm you meet the programme's entry requirements." data-am="የፕሮግራሙን የመግቢያ መስፈርቶች ማሟላትዎን ለማረጋገጥ ሰርተፍኬቶችዎ ይመረመራሉ።">Your certificates are checked to confirm you meet the programme's entry requirements.</span></li>
+          <li><strong data-en="Get your decision" data-am="ውሳኔዎን ያግኙ">Get your decision</strong><span data-en="Unicaf's Admissions Officer and Scholarship Committee tell you the result. Once you're approved, you can enrol and start studying." data-am="የUnicaf የቅበላ ኃላፊ እና የስኮላርሺፕ ኮሚቴ ውጤቱን ያሳውቁዎታል። ከጸደቀልዎ በኋላ ተመዝግበው መማር መጀመር ይችላሉ።">Unicaf's Admissions Officer and Scholarship Committee tell you the result. Once you're approved, you can enrol and start studying.</span></li>
+        </ol>
+      </div>
+
+      <div class="sch-cta">
+        <div>
+          <strong data-en="Apply with FSF beside you" data-am="FSF ከጎንዎ ሆኖ ያመልክቱ">Apply with FSF beside you</strong>
+          <p data-en="We can check the entry requirements with you, help you get your documents ready, and answer your questions before you apply." data-am="የመግቢያ መስፈርቶችን አብረን እናጣራለን፣ ሰነዶችዎን እንዲያዘጋጁ እንረዳዎታለን፣ ከማመልከትዎም በፊት ጥያቄዎችዎን እንመልሳለን።">We can check the entry requirements with you, help you get your documents ready, and answer your questions before you apply.</p>
+        </div>
+        <div class="sch-buttons">
+          <a class="sch-btn" href="index.html#contact" data-en="Ask FSF to help me apply →" data-am="FSF እንዲያግዘኝ እጠይቃለሁ →">Ask FSF to help me apply →</a>
+          <!-- Scholarship application link: put the URL in data-scholarship-link on <body>; this button stays hidden until then -->
+          <a class="sch-btn sch-btn-ghost" data-apply-link href="#" target="_blank" rel="noopener" hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a>
+        </div>
+      </div>
+      <p class="source-note" data-en="Summarised from Unicaf's scholarship pages (November 2026). Unicaf doesn't publish scholarship amounts, deadlines or a full document list; ask FSF for current details." data-am="ከUnicaf የስኮላርሺፕ ገጾች የተጠቃለለ (ኖቬምበር 2026)። Unicaf የስኮላርሺፕ መጠንን፣ የጊዜ ገደቦችን ወይም ሙሉ የሰነድ ዝርዝርን አያወጣም፤ ወቅታዊ መረጃ ለማግኘት FSFን ይጠይቁ።">Summarised from Unicaf's scholarship pages (November 2026). Unicaf doesn't publish scholarship amounts, deadlines or a full document list; ask FSF for current details.</p>
     </section>
 
     <section class="contact-strip"><p><strong data-en="Not sure which course is right?" data-am="የትኛው ኮርስ እንደሚስማማዎት እርግጠኛ አይደሉም?">Not sure which course is right?</strong><br><span data-en="Tell FSF what you want to do, and we'll help you choose." data-am="ምን ማድረግ እንደሚፈልጉ ለFSF ይንገሩ፤ እንዲመርጡ እንረዳዎታለን።">Tell FSF what you want to do, and we'll help you choose.</span></p><a href="index.html#contact" data-en="Talk to FSF →" data-am="FSFን ያነጋግሩ →">Talk to FSF →</a></section>
@@ -180,6 +268,8 @@
         show(FSF.t("Your enquiry couldn't be sent. Check your internet connection and try again.",'ጥያቄዎ አልተላከም። የኢንተርኔት ግንኙነትዎን አረጋግጠው እንደገና ይሞክሩ።'),true);
       }finally{button.disabled=false;}
     });
+    const applyLink=document.body.dataset.scholarshipLink.trim();
+    if(applyLink)document.querySelectorAll('[data-apply-link]').forEach(a=>{a.href=applyLink;a.hidden=false;});
     render();
   </script>
 </body>
