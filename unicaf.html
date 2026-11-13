@@ -51,6 +51,9 @@
     .modal-req ul{margin:12px 0 0;padding-left:20px;display:grid;gap:8px;font-size:14px;line-height:1.55}
     .req-length{margin:12px 0 0;font-size:14px;font-weight:700}
     .req-note{margin:8px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+    .sch-banner{display:block;width:100%;max-width:1000px;margin:0 0 12px;padding:0;border:0;border-radius:16px;overflow:hidden;background:none;cursor:pointer;transition:transform .25s,box-shadow .25s}
+    .sch-banner:hover{transform:translateY(-3px);box-shadow:0 14px 36px #00000055}
+    .sch-banner img{display:block;width:100%;height:auto}
     .sch-highlights{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     .sch-highlights li{padding:20px 22px;border-radius:16px;background:var(--navy);display:flex;flex-direction:column;gap:6px}
     .sch-highlights strong{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.03em;line-height:1.1}
@@ -128,6 +131,9 @@
         <p data-en="FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor&#x27;s, master&#x27;s and doctoral degrees, studied fully online or blended." data-am="FSF ከUnicaf ዩኒቨርሲቲ ዛምቢያ ጋር የመግባቢያ ስምምነት (MoU) ተፈራርሟል። በዚህ አጋርነት ብቁ ተማሪዎች ሙሉ በሙሉ በኦንላይን ወይም በተቀላቀለ መንገድ ለሚማሩት የባችለር፣ የማስተርስ እና የዶክትሬት ዲግሪዎች እስከ 82% ስኮላርሺፕ ማግኘት ይችላሉ።">FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor's, master's and doctoral degrees, studied fully online or blended.</p>
       </div>
 
+      <button type="button" class="sch-banner" data-apply aria-label="Apply for the Unicaf Scholarship of up to 82%">
+        <img src="assets/unicaf-fsf-scholarship-banner.png" width="1201" height="629" loading="lazy" alt="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship. Study online for an internationally recognised bachelor's, master's or doctoral degree. Apply now.">
+      </button>
       <ul class="sch-highlights">
         <li><strong data-en="Up to 82%" data-am="እስከ 82%">Up to 82%</strong><span data-en="scholarship through FSF" data-am="ስኮላርሺፕ በFSF በኩል">scholarship through FSF</span></li>
         <li><strong id="next-start">New start dates every month</strong><span data-en="Rolling admissions: a new start every month" data-am="ተከታታይ ቅበላ፦ በየወሩ አዲስ ጅማሮ">Rolling admissions: a new start every month</span></li>

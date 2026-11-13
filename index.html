@@ -85,6 +85,9 @@
     .facts strong{font-weight:760}
     .scholarship-note{margin-top:22px!important;padding:16px 18px;border-left:3px solid var(--navy);background:#2842a00d;border-radius:0 12px 12px 0}
     .unicaf .actions{margin-top:26px}
+    .home-banner{display:block;width:100%;padding:0;border:0;border-radius:18px;overflow:hidden;background:none;cursor:pointer;transition:transform .25s,box-shadow .25s}
+    .home-banner:hover{transform:translateY(-3px);box-shadow:0 16px 40px #14141430}
+    .home-banner img{display:block;width:100%;height:auto}
     .campus{position:relative;margin:0;overflow:hidden;border-radius:18px;background:var(--ink)}
     .campus img{width:100%;height:clamp(240px,38vw,480px);display:block;object-fit:cover;object-position:center 53%}
     .campus figcaption{position:absolute;right:16px;bottom:16px;padding:10px 14px;background:#141414d9;color:var(--paper);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:8px}
@@ -258,7 +261,7 @@
             </div>
           </div>
         </div>
-        <figure class="campus"><img src="assets/unicaf-campus-aerial.jpg" alt="Bird's-eye view of the Unicaf University campus in Zambia" loading="lazy"><figcaption class="brand-case" data-en="Unicaf University · Lusaka, Zambia" data-am="Unicaf ዩኒቨርሲቲ · ሉሳካ፣ ዛምቢያ">Unicaf University · Lusaka, Zambia</figcaption></figure>
+        <button type="button" class="home-banner" data-apply aria-label="Apply for the Unicaf Scholarship of up to 82%"><img src="assets/unicaf-fsf-scholarship-banner.png" width="1201" height="629" loading="lazy" alt="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship. Study online for an internationally recognised bachelor's, master's or doctoral degree. Apply now."></button>
       </div>
     </section>
 
