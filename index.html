@@ -6,6 +6,19 @@
   <meta name="theme-color" content="#141414">
   <link rel="icon" type="image/svg+xml" href="assets/fsf-favicon.svg">
   <meta name="description" content="FSF helps students choose a Unicaf University course, apply, and ask about scholarships, from the first question to the first class.">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@1&amp;display=swap">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FSF Consultancy">
+  <meta property="og:title" content="FSF — Your degree, with FSF beside you">
+  <meta property="og:description" content="FSF helps students choose a Unicaf University course, apply, and ask about scholarships of up to 82%, from the first question to the first class.">
+  <meta property="og:url" content="https://fsfconsult.vercel.app/">
+  <meta property="og:image" content="https://fsfconsult.vercel.app/assets/unicaf-fsf-scholarship-banner.png">
+  <meta property="og:image:width" content="1201">
+  <meta property="og:image:height" content="629">
+  <meta property="og:image:alt" content="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship.">
+  <meta name="twitter:card" content="summary_large_image">
   <title>FSF — Your degree, with FSF beside you</title>
   <style>
     :root{--navy:#2842a0;--ink:#141414;--muted:#3a3a3a;--paper:#f0efef;--line:#2842a040;--sans:'General Sans','Avenir Next',Arial,sans-serif}
@@ -16,6 +29,8 @@
     button,a{-webkit-tap-highlight-color:transparent}
     ::selection{background:var(--navy);color:var(--paper)}
     :focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+    .nav :focus-visible,.hero :focus-visible,.ticker :focus-visible,.contact :focus-visible,footer :focus-visible{outline-color:var(--paper)}
+    .contact .form :focus-visible{outline-color:var(--navy)}
     em{font-style:normal;font-weight:520}
     .section-tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:var(--navy)}
     .wrap{max-width:1180px;margin:0 auto}
@@ -88,6 +103,9 @@
     .home-banner{display:block;width:100%;padding:0;border:0;border-radius:18px;overflow:hidden;background:none;cursor:pointer;transition:transform .25s,box-shadow .25s}
     .home-banner:hover{transform:translateY(-3px);box-shadow:0 16px 40px #14141430}
     .home-banner img{display:block;width:100%;height:auto}
+    @media(min-width:901px){.home-banner{width:min(100%,720px);margin-left:auto}}
+    .text-link{display:inline-flex;align-items:center;padding:15px 6px;font-size:14px;font-weight:750;color:var(--navy);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+    .text-link:hover{text-decoration-thickness:2px}
     .campus{position:relative;margin:0;overflow:hidden;border-radius:18px;background:var(--ink)}
     .campus img{width:100%;height:clamp(240px,38vw,480px);display:block;object-fit:cover;object-position:center 53%}
     .campus figcaption{position:absolute;right:16px;bottom:16px;padding:10px 14px;background:#141414d9;color:var(--paper);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-radius:8px}
@@ -96,7 +114,9 @@
     .business{padding:clamp(70px,9vw,110px) clamp(22px,7vw,96px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,6vw,80px);align-items:end}
     .business p{font-size:17px;line-height:1.65;color:var(--muted);max-width:560px;margin:20px 0 0}
     .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
-    .chips span{padding:9px 13px;border:1px solid var(--line);border-radius:999px;color:var(--navy);font-size:14px}
+    .chips{gap:10px 24px}
+    .chips span{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-size:15px;font-weight:600}
+    .chips span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--navy)}
     .business .button{justify-self:start}
 
     /* Contact */
@@ -159,6 +179,7 @@
       .nav-links.open{display:flex}
       .nav-links a{padding:12px 8px}
       .nav-cta{text-align:center;color:var(--paper);margin-top:6px}
+      .nav-links :focus-visible{outline-color:var(--navy)}
       .hero-copy{padding:150px 22px 60px}
       .hero h1{font-size:clamp(46px,13.5vw,76px)}
       .hero:after{background-position:right -30% center;background-size:120vw}
@@ -256,8 +277,7 @@
             <p class="scholarship-note" data-en="Through FSF&#x27;s partnership with Unicaf University, eligible students can get a scholarship of up to 82% of their tuition. Awards are assessed individually, and FSF can help you check your options and apply." data-am="በFSF እና በUnicaf ዩኒቨርሲቲ አጋርነት ብቁ ተማሪዎች እስከ 82% የትምህርት ክፍያ ስኮላርሺፕ ማግኘት ይችላሉ። ውሳኔው በግል ይገመገማል፤ FSF አማራጮችዎን እንዲያጣሩ እና እንዲያመለክቱ ይረዳዎታል።">Through FSF's partnership with Unicaf University, eligible students can get a scholarship of up to 82% of their tuition. Awards are assessed individually, and FSF can help you check your options and apply.</p>
             <div class="actions">
               <a class="button" href="unicaf.html"><span data-en="Browse all courses" data-am="ሁሉንም ኮርሶች ይመልከቱ">Browse all courses</span><span class="arrow" aria-hidden="true">→</span></a>
-              <a class="button button-ghost" href="#contact" data-topic="student"><span data-en="Ask about scholarships" data-am="ስለ ስኮላርሺፕ ይጠይቁ">Ask about scholarships</span></a>
-              <a class="button button-ghost" href="#" data-apply hidden><span data-en="Apply for the scholarship" data-am="ለስኮላርሺፑ ያመልክቱ">Apply for the scholarship</span><span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#contact" data-topic="student"><span data-en="Ask about scholarships" data-am="ስለ ስኮላርሺፕ ይጠይቁ">Ask about scholarships</span></a>
             </div>
           </div>
         </div>
