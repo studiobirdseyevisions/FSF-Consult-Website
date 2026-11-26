@@ -97,7 +97,8 @@
     .sch-card li{position:relative;padding-left:22px;font-size:15px;line-height:1.55;color:#f0efefd8}
     .sch-card li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:#6f86e0}
     .sch-steps-wrap{margin-top:12px;padding:clamp(22px,2.6vw,30px);border:1px solid #f0efef2a;border-radius:16px}
-    .sch-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;counter-reset:s}
+    .sch-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:s}
+    @media(max-width:1100px){.sch-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
     .sch-steps li{counter-increment:s;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#f0efefd8}
     .sch-steps li:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--navy);color:var(--paper);font-weight:760;margin-bottom:6px}
     .sch-steps strong{color:var(--paper);font-size:17px}
@@ -152,35 +153,35 @@
       <div class="sch-head">
         <div>
           <div class="tag" data-en="Unicaf Scholarship" data-am="የUnicaf ስኮላርሺፕ">Unicaf Scholarship</div>
-          <h2 id="scholarship-title" data-en="Up to 82% off *your degree.*" data-am="እስከ 82% ቅናሽ *ለዲግሪዎ።*">Up to 82% off <em>your degree.</em></h2>
+          <h2 id="scholarship-title" data-en="Up to 82% off *your tuition.*" data-am="እስከ 82% ቅናሽ *ለትምህርት ክፍያዎ።*">Up to 82% off <em>your tuition.</em></h2>
         </div>
-        <p data-en="FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor&#x27;s, master&#x27;s and doctoral degrees, studied fully online or blended." data-am="FSF ከUnicaf ዩኒቨርሲቲ ዛምቢያ ጋር የመግባቢያ ስምምነት (MoU) ተፈራርሟል። በዚህ አጋርነት ብቁ ተማሪዎች ሙሉ በሙሉ በኦንላይን ወይም በተቀላቀለ መንገድ ለሚማሩት የባችለር፣ የማስተርስ እና የዶክትሬት ዲግሪዎች እስከ 82% ስኮላርሺፕ ማግኘት ይችላሉ።">FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, eligible students can get a scholarship of up to 82% on bachelor's, master's and doctoral degrees, studied fully online or blended.</p>
+        <p data-en="FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, students can get a scholarship of up to 82% on bachelor&#x27;s and master&#x27;s degrees, and up to 75% on a PhD, studied fully online or blended." data-am="FSF ከUnicaf ዩኒቨርሲቲ ዛምቢያ ጋር የመግባቢያ ስምምነት (MoU) ተፈራርሟል። በዚህ አጋርነት ተማሪዎች ሙሉ በሙሉ በኦንላይን ወይም በተቀላቀለ መንገድ ለሚማሩት የባችለር እና የማስተርስ ዲግሪዎች እስከ 82%፣ ለPhD ደግሞ እስከ 75% ስኮላርሺፕ ማግኘት ይችላሉ።">FSF has signed an MoU with Unicaf University, Zambia. Through this partnership, students can get a scholarship of up to 82% on bachelor's and master's degrees, and up to 75% on a PhD, studied fully online or blended.</p>
       </div>
 
       <button type="button" class="sch-banner" data-apply aria-label="Apply for the Unicaf Scholarship of up to 82%">
         <picture><source srcset="assets/unicaf-fsf-scholarship-banner.webp" type="image/webp"><img src="assets/unicaf-fsf-scholarship-banner.png" width="1201" height="629" loading="lazy" decoding="async" alt="Unicaf in partnership with FSF Consultancy: up to an 82% Unicaf Scholarship. Study online for an internationally recognised bachelor's, master's or doctoral degree. Apply now."></picture>
       </button>
       <ul class="sch-highlights">
-        <li><strong data-en="Up to 82%" data-am="እስከ 82%">Up to 82%</strong><span data-en="scholarship through FSF" data-am="ስኮላርሺፕ በFSF በኩል">scholarship through FSF</span></li>
+        <li><strong data-en="Up to 82%" data-am="እስከ 82%">Up to 82%</strong><span data-en="scholarship for bachelor&#x27;s and master&#x27;s degrees, and up to 75% for a PhD" data-am="ለባችለር እና ለማስተርስ ዲግሪዎች ስኮላርሺፕ፤ ለPhD እስከ 75%">scholarship for bachelor's and master's degrees, and up to 75% for a PhD</span></li>
         <li><strong id="next-start">New start dates every month</strong><span data-en="Rolling admissions: a new start every month" data-am="ተከታታይ ቅበላ፦ በየወሩ አዲስ ጅማሮ">Rolling admissions: a new start every month</span></li>
-        <li><strong data-en="Free short course" data-am="ነፃ አጭር ኮርስ">Free short course</strong><span data-en="from the University of California, Riverside, once you've paid the minimum deposit" data-am="ዝቅተኛውን ቅድመ ክፍያ ከከፈሉ በኋላ ከካሊፎርኒያ ዩኒቨርሲቲ፣ ሪቨርሳይድ">from the University of California, Riverside, once you've paid the minimum deposit</span></li>
+        <li><strong data-en="A call within 24 hours" data-am="በ24 ሰዓት ውስጥ ጥሪ">A call within 24 hours</strong><span data-en="A Unicaf representative contacts you after you apply" data-am="ካመለከቱ በኋላ የUnicaf ተወካይ ያነጋግርዎታል">A Unicaf representative contacts you after you apply</span></li>
       </ul>
       <div class="sch-grid">
         <article class="sch-card">
           <h3 data-en="What it covers" data-am="የሚሸፍነው">What it covers</h3>
           <ul>
-            <li data-en="Up to 82% of your tuition. You pay the rest, and payment plans are available." data-am="እስከ 82% የሚደርስ የትምህርት ክፍያዎን ይሸፍናል። ቀሪውን እርስዎ ይከፍላሉ፤ የክፍያ ዕቅዶችም አሉ።">Up to 82% of your tuition. You pay the rest, and payment plans are available.</li>
+            <li data-en="Up to 82% of your tuition for a bachelor&#x27;s or master&#x27;s, and up to 75% for a PhD. You pay the rest, and payment plans are available." data-am="ለባችለር ወይም ለማስተርስ እስከ 82%፣ ለPhD ደግሞ እስከ 75% የትምህርት ክፍያዎን ይሸፍናል። ቀሪውን እርስዎ ይከፍላሉ፤ የክፍያ ዕቅዶችም አሉ።">Up to 82% of your tuition for a bachelor's or master's, and up to 75% for a PhD. You pay the rest, and payment plans are available.</li>
             <li data-en="How much you save depends on the programme and the scholarship level you qualify for." data-am="የሚቆጥቡት መጠን በፕሮግራሙ እና ብቁ በሚሆኑበት የስኮላርሺፕ ደረጃ ይወሰናል።">How much you save depends on the programme and the scholarship level you qualify for.</li>
             <li data-en="An adviser gives you the exact fees after you apply. FSF can help you understand them." data-am="ካመለከቱ በኋላ አማካሪ ትክክለኛውን ክፍያ ይነግርዎታል። FSF እንዲረዱት ሊያግዝዎት ይችላል።">An adviser gives you the exact fees after you apply. FSF can help you understand them.</li>
           </ul>
         </article>
         <article class="sch-card">
-          <h3 data-en="Who can apply" data-am="ማን ማመልከት ይችላል">Who can apply</h3>
+          <h3 data-en="Who can get a scholarship" data-am="ስኮላርሺፕ ማን ማግኘት ይችላል">Who can get a scholarship</h3>
           <ul>
-            <li data-en="You meet the entry requirements for the programme you choose." data-am="ለመረጡት ፕሮግራም የመግቢያ መስፈርቶችን ያሟላሉ።">You meet the entry requirements for the programme you choose.</li>
-            <li data-en="You can pay the part of the fees the scholarship doesn't cover." data-am="ስኮላርሺፑ የማይሸፍነውን የክፍያ ክፍል መክፈል ይችላሉ።">You can pay the part of the fees the scholarship doesn't cover.</li>
-            <li data-en="English: for a bachelor's, a credit in English or an approved English test. For a master's, proof is only needed if your bachelor's wasn't taught in English. Doctoral study needs IELTS 6.5 or Unicaf's English test if your earlier studies weren't in English." data-am="እንግሊዝኛ፦ ለባችለር በእንግሊዝኛ ክሬዲት ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና። ለማስተርስ ማስረጃ የሚያስፈልገው የባችለር ዲግሪዎ በእንግሊዝኛ ካልተሰጠ ብቻ ነው። ለዶክትሬት ቀደም ያለው ትምህርትዎ በእንግሊዝኛ ካልሆነ IELTS 6.5 ወይም የUnicaf የእንግሊዝኛ ፈተና ያስፈልጋል።">English: for a bachelor's, a credit in English or an approved English test. For a master's, proof is only needed if your bachelor's wasn't taught in English. Doctoral study needs IELTS 6.5 or Unicaf's English test if your earlier studies weren't in English.</li>
-            <li data-en="Scholarships differ by the country you live in. Students living in Ethiopia can apply." data-am="ስኮላርሺፖች በሚኖሩበት ሀገር ይለያያሉ። በኢትዮጵያ የሚኖሩ ተማሪዎች ማመልከት ይችላሉ።">Scholarships differ by the country you live in. Students living in Ethiopia can apply.</li>
+            <li data-en="Everyone who applies is considered for a scholarship. What you need to show depends on your level." data-am="የሚያመለክት ሁሉ ለስኮላርሺፕ ይታሰባል። የሚያቀርቡት ማስረጃ በትምህርት ደረጃዎ ይወሰናል።">Everyone who applies is considered for a scholarship. What you need to show depends on your level.</li>
+            <li data-en="Bachelor&#x27;s: a Grade 12 certificate, O-levels or A-levels, with 5 or more credits (in subjects such as English, Mathematics and Physics)." data-am="ባችለር፦ የ12ኛ ክፍል ሰርተፍኬት፣ O-level ወይም A-level፣ ከ5 ወይም ከዚያ በላይ ክሬዲቶች ጋር (እንደ እንግሊዝኛ፣ ሂሳብ እና ፊዚክስ ባሉ ትምህርቶች)።">Bachelor's: a Grade 12 certificate, O-levels or A-levels, with 5 or more credits (in subjects such as English, Mathematics and Physics).</li>
+            <li data-en="Master&#x27;s: your high school certificate and transcript, and your bachelor&#x27;s degree certificate." data-am="ማስተርስ፦ የሁለተኛ ደረጃ ትምህርት ሰርተፍኬትዎ እና ትራንስክሪፕትዎ፣ እንዲሁም የባችለር ዲግሪ ሰርተፍኬትዎ።">Master's: your high school certificate and transcript, and your bachelor's degree certificate.</li>
+            <li data-en="PhD: your high school certificate and transcript, and your bachelor&#x27;s and master&#x27;s degree certificates." data-am="PhD፦ የሁለተኛ ደረጃ ትምህርት ሰርተፍኬትዎ እና ትራንስክሪፕትዎ፣ እንዲሁም የባችለር እና የማስተርስ ዲግሪ ሰርተፍኬቶችዎ።">PhD: your high school certificate and transcript, and your bachelor's and master's degree certificates.</li>
           </ul>
         </article>
         <article class="sch-card">
@@ -189,6 +190,9 @@
             <li data-en="Unicaf University in Zambia is accredited by Zambia's Higher Education Authority (HEA) and by the British Accreditation Council (BAC)." data-am="Unicaf ዩኒቨርሲቲ በዛምቢያ በዛምቢያ ከፍተኛ ትምህርት ባለሥልጣን (HEA) እና በብሪቲሽ አክሬዲቴሽን ካውንስል (BAC) እውቅና አግኝቷል።">Unicaf University in Zambia is accredited by Zambia's Higher Education Authority (HEA) and by the British Accreditation Council (BAC).</li>
             <li data-en="Online study is flexible: you study around work and family, as long as you keep up with your deadlines." data-am="የኦንላይን ትምህርት ተለዋዋጭ ነው፤ የጊዜ ገደቦችዎን እስካከበሩ ድረስ ከሥራ እና ከቤተሰብ ጋር አጣጥመው መማር ይችላሉ።">Online study is flexible: you study around work and family, as long as you keep up with your deadlines.</li>
             <li data-en="A few programmes, such as Nursing and Medicine, are only taught on campus in Lusaka." data-am="እንደ ነርሲንግ እና ሕክምና ያሉ ጥቂት ፕሮግራሞች የሚሰጡት በሉሳካ ካምፓስ ብቻ ነው።">A few programmes, such as Nursing and Medicine, are only taught on campus in Lusaka.</li>
+            <li data-en="English: after you apply, Unicaf gives you an English proficiency test before you enrol. An IELTS result helps a lot, so take one if you can." data-am="እንግሊዝኛ፦ ካመለከቱ በኋላ ከመመዝገብዎ በፊት Unicaf የእንግሊዝኛ ብቃት ፈተና ይሰጥዎታል። የIELTS ውጤት በጣም ይረዳል፤ ከቻሉ ይፈተኑ።">English: after you apply, Unicaf gives you an English proficiency test before you enrol. An IELTS result helps a lot, so take one if you can.</li>
+            <li data-en="Unicaf also works with partner universities such as the University of East London and the University of Liverpool." data-am="Unicaf እንደ ኢስት ለንደን ዩኒቨርሲቲ እና ሊቨርፑል ዩኒቨርሲቲ ካሉ አጋር ዩኒቨርሲቲዎች ጋርም ይሠራል።">Unicaf also works with partner universities such as the University of East London and the University of Liverpool.</li>
+            <li data-en="Once you&#x27;ve paid your deposit, you can also take a free short course from the University of California, Riverside." data-am="ቅድመ ክፍያዎን ከከፈሉ በኋላ ከካሊፎርኒያ ዩኒቨርሲቲ፣ ሪቨርሳይድ ነፃ አጭር ኮርስም መውሰድ ይችላሉ።">Once you've paid your deposit, you can also take a free short course from the University of California, Riverside.</li>
           </ul>
         </article>
       </div>
@@ -196,9 +200,10 @@
       <div class="sch-steps-wrap">
         <h3 class="sch-steps-title" data-en="How applying works" data-am="ማመልከቻው እንዴት ይሠራል">How applying works</h3>
         <ol class="sch-steps">
-          <li><strong data-en="Fill in a short form" data-am="አጭር ቅጽ ይሙሉ">Fill in a short form</strong><span data-en="Your name, email, phone, country, the programme you want, and your current level of education (for example, a high school diploma or a bachelor's degree). An adviser then calls you." data-am="ስምዎ፣ ኢሜይልዎ፣ ስልክዎ፣ ሀገርዎ፣ የሚፈልጉት ፕሮግራም እና አሁን ያለዎት የትምህርት ደረጃ (ለምሳሌ የሁለተኛ ደረጃ ዲፕሎማ ወይም የባችለር ዲግሪ)። ከዚያም አማካሪ ይደውልልዎታል።">Your name, email, phone, country, the programme you want, and your current level of education (for example, a high school diploma or a bachelor's degree). An adviser then calls you.</span></li>
-          <li><strong data-en="Send your documents" data-am="ሰነዶችዎን ይላኩ">Send your documents</strong><span data-en="Your certificates are checked to confirm you meet the programme's entry requirements." data-am="የፕሮግራሙን የመግቢያ መስፈርቶች ማሟላትዎን ለማረጋገጥ ሰርተፍኬቶችዎ ይመረመራሉ።">Your certificates are checked to confirm you meet the programme's entry requirements.</span></li>
-          <li><strong data-en="Get your decision" data-am="ውሳኔዎን ያግኙ">Get your decision</strong><span data-en="Unicaf's Admissions Officer and Scholarship Committee tell you the result. Once you're approved, you can enrol and start studying." data-am="የUnicaf የቅበላ ኃላፊ እና የስኮላርሺፕ ኮሚቴ ውጤቱን ያሳውቁዎታል። ከጸደቀልዎ በኋላ ተመዝግበው መማር መጀመር ይችላሉ።">Unicaf's Admissions Officer and Scholarship Committee tell you the result. Once you're approved, you can enrol and start studying.</span></li>
+          <li><strong data-en="Apply online" data-am="በኦንላይን ያመልክቱ">Apply online</strong><span data-en="A short form: your name, email, phone, country, the programme you want and your current level of education." data-am="አጭር ቅጽ፦ ስምዎ፣ ኢሜይልዎ፣ ስልክዎ፣ ሀገርዎ፣ የሚፈልጉት ፕሮግራም እና አሁን ያለዎት የትምህርት ደረጃ።">A short form: your name, email, phone, country, the programme you want and your current level of education.</span></li>
+          <li><strong data-en="Get a call within 24 hours" data-am="በ24 ሰዓት ውስጥ ጥሪ ይደርስዎታል">Get a call within 24 hours</strong><span data-en="A Unicaf representative explains how the university and the scholarship work, and which documents to send." data-am="የUnicaf ተወካይ ዩኒቨርሲቲው እና ስኮላርሺፑ እንዴት እንደሚሠሩ እንዲሁም የትኞቹን ሰነዶች መላክ እንዳለብዎ ያስረዳዎታል።">A Unicaf representative explains how the university and the scholarship work, and which documents to send.</span></li>
+          <li><strong data-en="Send your documents" data-am="ሰነዶችዎን ይላኩ">Send your documents</strong><span data-en="With a small application fee: $15 for a bachelor&#x27;s, $20 for a master&#x27;s, $50 for a PhD." data-am="ከአነስተኛ የማመልከቻ ክፍያ ጋር፦ ለባችለር $15፣ ለማስተርስ $20፣ ለPhD $50።">With a small application fee: $15 for a bachelor's, $20 for a master's, $50 for a PhD.</span></li>
+          <li><strong data-en="English test, then your decision" data-am="የእንግሊዝኛ ፈተና፣ ከዚያም ውሳኔ">English test, then your decision</strong><span data-en="You take Unicaf&#x27;s English proficiency test. Unicaf then tells you the admission and scholarship result, and you can enrol." data-am="የUnicafን የእንግሊዝኛ ብቃት ፈተና ይወስዳሉ። ከዚያም Unicaf የቅበላ እና የስኮላርሺፕ ውጤቱን ያሳውቅዎታል፤ መመዝገብም ይችላሉ።">You take Unicaf's English proficiency test. Unicaf then tells you the admission and scholarship result, and you can enrol.</span></li>
         </ol>
       </div>
 
@@ -213,7 +218,7 @@
           <a class="sch-btn sch-btn-ghost" data-apply href="#" hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a>
         </div>
       </div>
-      <p class="source-note" data-en="Based on Unicaf&#x27;s scholarship pages and Unicaf University&#x27;s offer for FSF (November 2026). Unicaf doesn&#x27;t publish deadlines or a full document list, so ask FSF for current details." data-am="ከUnicaf የስኮላርሺፕ ገጾች እና Unicaf ዩኒቨርሲቲ ለFSF ካቀረበው ቅናሽ የተወሰደ (ኖቬምበር 2026)። Unicaf የጊዜ ገደቦችን ወይም ሙሉ የሰነድ ዝርዝርን አያወጣም፤ ወቅታዊ መረጃ ለማግኘት FSFን ይጠይቁ።">Based on Unicaf's scholarship pages and Unicaf University's offer for FSF (November 2026). Unicaf doesn't publish deadlines or a full document list, so ask FSF for current details.</p>
+      <p class="source-note" data-en="Based on information from Unicaf University and its offer for FSF (November 2026). Details can change, so ask FSF for the latest." data-am="ከUnicaf ዩኒቨርሲቲ በተገኘ መረጃ እና ለFSF ባቀረበው ቅናሽ ላይ የተመሠረተ (ኖቬምበር 2026)። ዝርዝሮች ሊለወጡ ስለሚችሉ ወቅታዊውን መረጃ FSFን ይጠይቁ።">Based on information from Unicaf University and its offer for FSF (November 2026). Details can change, so ask FSF for the latest.</p>
     </section>
 
     <section class="contact-strip"><p><strong data-en="Not sure which course is right?" data-am="የትኛው ኮርስ እንደሚስማማዎት እርግጠኛ አይደሉም?">Not sure which course is right?</strong><br><span data-en="Tell FSF what you want to do, and we'll help you choose." data-am="ምን ማድረግ እንደሚፈልጉ ለFSF ይንገሩ፤ እንዲመርጡ እንረዳዎታለን።">Tell FSF what you want to do, and we'll help you choose.</span></p><a href="index.html#contact" data-en="Talk to FSF →" data-am="FSFን ያነጋግሩ →">Talk to FSF →</a></section>
@@ -328,12 +333,12 @@
     const ID=["A copy of your passport or national ID.","የፓስፖርት ወይም የብሔራዊ መታወቂያ ቅጂ።"];
     const REQ={
       bachelor:[
-        ["A full Grade 12 certificate with 5 O-level credits (C or better), including English, or an equivalent qualification from your country.","5 የO-level ክሬዲቶች (C ወይም ከዚያ በላይ) እንግሊዝኛን ጨምሮ ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
+        ["A Grade 12 certificate, O-levels or A-levels, with 5 or more credits (C or better), including English, or an equivalent qualification from your country.","እንግሊዝኛን ጨምሮ 5 ወይም ከዚያ በላይ ክሬዲቶች (C ወይም ከዚያ በላይ) ያሉት የ12ኛ ክፍል ሰርተፍኬት፣ O-level ወይም A-level፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
         ["Have a diploma or advanced diploma? You may be accepted, and a diploma in a related subject may let you start in year 3.","ዲፕሎማ ወይም አድቫንስድ ዲፕሎማ አለዎት? ተቀባይነት ሊያገኙ ይችላሉ፤ በተዛማጅ ዘርፍ ያለ ዲፕሎማ ከ3ኛ ዓመት እንዲጀምሩ ሊያስችልዎ ይችላል።"],
-        ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
+        ["English: a credit in English, or a pass in an approved English test. Unicaf also gives you an English proficiency test after you apply.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ። ካመለከቱ በኋላ Unicaf የእንግሊዝኛ ብቃት ፈተናም ይሰጥዎታል።"],
         ID],
       bachelorMath:[
-        ["A full Grade 12 certificate with 5 O-level credits (C or better), including English and Mathematics, or an equivalent qualification from your country.","እንግሊዝኛ እና ሂሳብን ጨምሮ 5 የO-level ክሬዲቶች (C ወይም ከዚያ በላይ) ያሉት ሙሉ የ12ኛ ክፍል ሰርተፍኬት፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
+        ["A Grade 12 certificate, O-levels or A-levels, with 5 or more credits (C or better), including English and Mathematics, or an equivalent qualification from your country.","እንግሊዝኛ እና ሂሳብን ጨምሮ 5 ወይም ከዚያ በላይ ክሬዲቶች (C ወይም ከዚያ በላይ) ያሉት የ12ኛ ክፍል ሰርተፍኬት፣ O-level ወይም A-level፣ ወይም ከሀገርዎ ተመጣጣኝ የትምህርት ማስረጃ።"],
         ["Have a diploma or advanced diploma? You may be accepted, and a diploma in a related subject may let you start in year 3.","ዲፕሎማ ወይም አድቫንስድ ዲፕሎማ አለዎት? ተቀባይነት ሊያገኙ ይችላሉ፤ በተዛማጅ ዘርፍ ያለ ዲፕሎማ ከ3ኛ ዓመት እንዲጀምሩ ሊያስችልዎ ይችላል።"],
         ["English: a credit in English, or a pass in an approved English test.","እንግሊዝኛ፦ በእንግሊዝኛ ክሬዲት፣ ወይም ተቀባይነት ያለው የእንግሊዝኛ ፈተና ማለፍ።"],
         ID],
