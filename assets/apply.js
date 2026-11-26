@@ -11,7 +11,12 @@
   const APPLY_LINK = 'https://link.unicaf.org/fsfwa';
   const SHEET = 'https://script.google.com/macros/s/AKfycbxrtbl-E2Rv7o9htQPBmwVX5n3tqvkfEoLr5PPU3yhsClYQeSZq_7_OOcGBT4_51nipuw/exec';
 
+  // Turn on (true) once the new sheet script (fsf-enquiries.gs) is installed, so clicks land in
+  // their own "Apply clicks" tab instead of mixing with enquiries.
+  const COUNT_CLICKS = false;
+
   function count(course) {
+    if (!COUNT_CLICKS) return;
     try {
       const page = (document.title.split('—')[0].trim() || location.pathname);
       navigator.sendBeacon(SHEET, new URLSearchParams({ type: 'apply_click', page, course: course || '' }));
