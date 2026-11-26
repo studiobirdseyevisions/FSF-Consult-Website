@@ -246,6 +246,7 @@
     [lang="am"] h1,[lang="am"] h2,[lang="am"] h3{letter-spacing:0;line-height:1.15}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal,.js .reveal,.js .how .step,.js .how .step:before{opacity:1;transform:none}.steps:after{transform:none!important}.form-status .tick path{stroke-dashoffset:0}}
   </style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script><script defer src="/_vercel/insights/script.js"></script>
 </head>
 <!--
   WhatsApp: put FSF's number in data-whatsapp below (international format, digits only, e.g. 2519XXXXXXXX).
@@ -372,7 +373,7 @@
         <label class="field"><span data-en="Phone or email" data-am="ስልክ ወይም ኢሜይል">Phone or email</span><input name="contact" autocomplete="tel" required maxlength="180"></label>
         <label class="field wide"><span id="message-label" data-en="What would you like to study, or what's your question?" data-am="ምን መማር ይፈልጋሉ? ወይም ጥያቄዎ ምንድን ነው?">What would you like to study, or what's your question?</span><textarea name="message" required maxlength="2000"></textarea></label>
         <label class="honeypot" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
-        <p class="privacy" data-en="Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it." data-am="መልዕክትዎ ቡድናችን እንዲከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣል። ለማንም አናጋራውም።">Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it.</p>
+        <p class="privacy" data-en="An FSF officer will get in touch with you within 24 hours. Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it." data-am="የFSF ባለሙያ በ24 ሰዓት ውስጥ ያገኝዎታል። መልዕክትዎ ቡድናችን እንዲከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣል። ለማንም አናጋራውም።">An FSF officer will get in touch with you within 24 hours. Your message is saved to FSF's private enquiry sheet so our team can follow up. We don't share it.</p>
         <button class="button" type="submit"><span data-en="Send message" data-am="መልዕክት ይላኩ">Send message</span><span class="arrow" aria-hidden="true">→</span></button>
         <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
       </form>
@@ -510,12 +511,13 @@
         const topic = data.get('topic');
         data.delete('topic');
         const payload = new URLSearchParams(data);
+        payload.set('type', topic === 'business' ? 'business' : 'student');
         payload.set('page', topic === 'business' ? 'FSF homepage — business' : 'FSF homepage — student');
         await FSF.send(form.dataset.endpoint, payload);
         const name = form.elements.name.value.trim().split(' ')[0];
         show(FSF.t(
-          `Thank you, ${name}. Your message is on its way to the FSF team. If you don't hear back within a few days, message us on Instagram @fsfconsult.`,
-          `እናመሰግናለን ${name}። መልዕክትዎ ወደ FSF ቡድን ተልኳል። በጥቂት ቀናት ውስጥ ምላሽ ካላገኙ በInstagram @fsfconsult ያግኙን።`
+          `Thank you, ${name}. An FSF officer will get in touch with you within 24 hours.`,
+          `እናመሰግናለን ${name}። የFSF ባለሙያ በ24 ሰዓት ውስጥ ያገኝዎታል።`
         ), false, true);
         form.reset();
         setTopic('student');

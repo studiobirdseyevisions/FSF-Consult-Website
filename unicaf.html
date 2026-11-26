@@ -32,6 +32,7 @@
     .course-card:focus-visible{outline:2px solid var(--navy)!important;outline-offset:3px}
     .show-all{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;margin-top:12px;padding:16px 20px;border:1px solid var(--navy);border-radius:14px;background:transparent;color:var(--navy);font:inherit;font-size:15px;font-weight:750;cursor:pointer;transition:background .2s,color .2s}
     .show-all:hover{background:var(--navy);color:var(--paper)}
+    .quick-sch{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;padding:22px clamp(20px,6vw,82px);background:var(--navy);color:var(--paper)}.quick-sch ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px 40px}.quick-sch li{display:flex;flex-direction:column;gap:3px}.quick-sch strong{font-size:clamp(17px,1.8vw,21px);letter-spacing:-.02em;line-height:1.15}.quick-sch span{font-size:13px;color:#f0efefd0}@media(max-width:620px){.quick-sch ul{display:grid;gap:12px}.quick-sch .sch-btn{width:100%;text-align:center}}
     .sch-btn:active,.hero-jump:active,.top-cta:active,.show-all:active,.submit-enquiry:active,.course-card:active,.sch-banner:active{transform:scale(.97);transition-duration:.08s}
     [hidden]{display:none!important}
     .brand-case{text-transform:none!important;letter-spacing:.04em!important}
@@ -115,6 +116,7 @@
     @media(max-width:620px){.sch-cta{align-items:flex-start;flex-direction:column}.sch-btn{white-space:normal}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script><script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <header class="top nav">
@@ -133,6 +135,15 @@
       <p data-en="Search 41 programmes, then tap any course to ask FSF about it. We'll help with the application and scholarship questions." data-am="41 ፕሮግራሞችን ይፈልጉ፤ ከዚያም ስለ ማንኛውም ኮርስ FSFን ለመጠየቅ ይጫኑት። በማመልከቻ እና በስኮላርሺፕ ጥያቄዎች እንረዳዎታለን።">Search 41 programmes, then tap any course to ask FSF about it. We'll help with the application and scholarship questions.</p>
       <div class="hero-links"><a class="hero-jump" href="#catalogue" data-en="Start searching ↓" data-am="መፈለግ ይጀምሩ ↓">Start searching ↓</a><a class="hero-jump" href="#scholarships" data-en="Scholarships ↓" data-am="ስኮላርሺፖች ↓">Scholarships ↓</a></div>
       <span class="orbit" aria-hidden="true"></span>
+    </section>
+
+    <section class="quick-sch" aria-label="Scholarship at a glance">
+      <ul>
+        <li><strong data-en="Up to 82% off" data-am="እስከ 82% ቅናሽ">Up to 82% off</strong><span data-en="Scholarship through FSF" data-am="ስኮላርሺፕ በFSF በኩል">Scholarship through FSF</span></li>
+        <li><strong data-next-start>New start dates every month</strong><span data-en="A new start every month" data-am="በየወሩ አዲስ ጅማሮ">A new start every month</span></li>
+        <li><strong data-en="A call in 24 hours" data-am="በ24 ሰዓት ጥሪ">A call in 24 hours</strong><span data-en="After you apply" data-am="ካመለከቱ በኋላ">After you apply</span></li>
+      </ul>
+      <a class="sch-btn" data-apply href="https://link.unicaf.org/fsfwa" data-en="Apply now ↗" data-am="አሁን ያመልክቱ ↗">Apply now ↗</a>
     </section>
 
     <section class="catalogue" id="catalogue" aria-labelledby="catalogue-title">
@@ -227,7 +238,7 @@
   </main>
   <footer><a class="brand" href="index.html" aria-label="FSF home"><img src="assets/fsf-logo-white.svg" alt="FSF Consultancy"></a><span data-en="FSF Consultancy · Connecting people with opportunity" data-am="FSF Consultancy · ሰዎችን ከዕድል ጋር እናገናኛለን">FSF Consultancy · Connecting people with opportunity</span><a class="back" href="index.html" data-en="← FSF home" data-am="← FSF መነሻ">← FSF home</a></footer>
   <dialog class="modal" id="course-modal" aria-labelledby="modal-title"><div class="modal-head"><div><div class="tag" data-en="Ask FSF about this course" data-am="ስለዚህ ኮርስ FSFን ይጠይቁ">Ask FSF about this course</div><h2 id="modal-title"></h2></div><button class="close-modal" id="close-modal" type="button" aria-label="Close" data-en-label="Close" data-am-label="ዝጋ">×</button></div><div class="modal-body"><p class="modal-description" id="modal-description"></p><details class="modal-req" open><summary data-en="Entry requirements" data-am="የመግቢያ መስፈርቶች">Entry requirements</summary><ul id="req-list"></ul><p class="req-length" id="req-length"></p><p class="req-note" data-en="Summarised from Unicaf University (Zambia). Have certificates from Ethiopia or another country? FSF can check what they count as." data-am="ከUnicaf ዩኒቨርሲቲ (ዛምቢያ) የተጠቃለለ። ከኢትዮጵያ ወይም ከሌላ ሀገር ሰርተፍኬት አለዎት? ምን ያህል ተመጣጣኝ እንደሆኑ FSF ሊያጣራልዎ ይችላል።">Summarised from Unicaf University (Zambia). Have certificates from Ethiopia or another country? FSF can check what they count as.</p></details><form class="lead-form" id="course-enquiry" novalidate><input type="hidden" id="enquiry-course" name="course"><label>
-        <span data-en="Full name" data-am="ሙሉ ስም">Full name</span><input name="name" autocomplete="name" required></label><label><span data-en="Phone number" data-am="ስልክ ቁጥር">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label><label class="wide"><span data-en="Email (optional)" data-am="ኢሜይል (አማራጭ)">Email (optional)</span><input name="email" type="email" autocomplete="email"></label><p class="form-notice wide" data-en="Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them." data-am="ዝርዝሮችዎ እንድንከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣሉ። ለማንም አናጋራቸውም።">Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them.</p><button class="submit-enquiry" type="submit" data-en="Send enquiry" data-am="ጥያቄ ይላኩ">Send enquiry</button><p class="form-status wide" id="form-status" role="status" aria-live="polite" hidden></p></form><p class="modal-apply"><span data-en="Ready to apply now?" data-am="አሁን ለማመልከት ዝግጁ ነዎት?">Ready to apply now?</span> <a href="#" data-apply hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a></p></div></dialog>
+        <span data-en="Full name" data-am="ሙሉ ስም">Full name</span><input name="name" autocomplete="name" required></label><label><span data-en="Phone number" data-am="ስልክ ቁጥር">Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label><label class="wide"><span data-en="Email (optional)" data-am="ኢሜይል (አማራጭ)">Email (optional)</span><input name="email" type="email" autocomplete="email"></label><p class="form-notice wide" data-en="An FSF officer will get in touch with you within 24 hours. Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them." data-am="የFSF ባለሙያ በ24 ሰዓት ውስጥ ያገኝዎታል። ዝርዝሮችዎ እንድንከታተል በFSF የግል የጥያቄ ሰንጠረዥ ውስጥ ይቀመጣሉ። ለማንም አናጋራቸውም።">An FSF officer will get in touch with you within 24 hours. Your details are saved to FSF's private enquiry sheet so we can follow up. We don't share them.</p><button class="submit-enquiry" type="submit" data-en="Send enquiry" data-am="ጥያቄ ይላኩ">Send enquiry</button><p class="form-status wide" id="form-status" role="status" aria-live="polite" hidden></p></form><p class="modal-apply"><span data-en="Ready to apply now?" data-am="አሁን ለማመልከት ዝግጁ ነዎት?">Ready to apply now?</span> <a href="#" data-apply hidden data-en="Apply on Unicaf's site ↗" data-am="በUnicaf ድረ-ገጽ ያመልክቱ ↗">Apply on Unicaf's site ↗</a></p></div></dialog>
   <script>
     const programmes=[
       {name:'Master of Arts in English Literature',level:'Master',mode:'Online',field:'Arts & humanities',description:'Explore literary works across genres, periods and cultures while developing advanced interpretation, critical analysis and literary theory skills.'},
@@ -275,6 +286,7 @@
   </script>
   <script src="assets/site.js"></script>
   <script src="assets/apply.js"></script>
+  <script src="assets/enquiry.js"></script>
   <script>
     const grid=document.querySelector('#course-grid'),search=document.querySelector('#course-search'),level=document.querySelector('#level-filter'),mode=document.querySelector('#mode-filter'),count=document.querySelector('#result-count'),modal=document.querySelector('#course-modal'),clear=document.querySelector('#clear-filters'),status=document.querySelector('#form-status');
     const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -321,9 +333,9 @@
         const payload=new URLSearchParams(new FormData(form));
         payload.set('message','Interested in '+course);
         payload.set('contact',[form.elements.phone.value,form.elements.email.value].filter(Boolean).join(' / '));
-        payload.set('page','Unicaf course: '+course);
+        payload.set('type','student');payload.set('page','Unicaf course: '+course);
         await FSF.send(endpoint,payload);
-        show(FSF.t("Thank you. Your enquiry is on its way to the FSF team, and we'll contact you about this course. If you don't hear back within a few days, message us on Instagram @fsfconsult.",'እናመሰግናለን። ጥያቄዎ ወደ FSF ቡድን ተልኳል፤ ስለዚህ ኮርስ እናነጋግርዎታለን። በጥቂት ቀናት ውስጥ ምላሽ ካላገኙ በInstagram @fsfconsult ያግኙን።'));
+        show(FSF.t('Thank you. An FSF officer will get in touch with you about this course within 24 hours.','እናመሰግናለን። የFSF ባለሙያ ስለዚህ ኮርስ በ24 ሰዓት ውስጥ ያገኝዎታል።'));
         form.reset();document.querySelector('#enquiry-course').value=course;
       }catch(error){
         show(FSF.t("Your enquiry couldn't be sent. Check your internet connection and try again.",'ጥያቄዎ አልተላከም። የኢንተርኔት ግንኙነትዎን አረጋግጠው እንደገና ይሞክሩ።'),true);
@@ -383,12 +395,12 @@
     // Next start date (Unicaf University 2026 intakes: rolling admissions, one start each month).
     const STARTS=['2026-01-12','2026-02-09','2026-03-09','2026-04-13','2026-05-11','2026-06-08','2026-07-13','2026-08-10','2026-09-14','2026-10-12','2026-11-09','2026-12-14'];
     function renderNextStart(){
-      const el=document.querySelector('#next-start');if(!el)return;
+      const els=document.querySelectorAll('#next-start,[data-next-start]');if(!els.length)return;
       const today=new Date();today.setHours(0,0,0,0);
       const next=STARTS.map(d=>new Date(d+'T00:00:00')).find(d=>d>=today);
-      if(!next){el.textContent=FSF.t('New start dates every month','በየወሩ አዲስ የመጀመሪያ ቀናት');return;}
+      if(!next){els.forEach(el=>el.textContent=FSF.t('New start dates every month','በየወሩ አዲስ የመጀመሪያ ቀናት'));return;}
       const en=next.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-      el.textContent=FSF.t(`Next start date: ${en}`,`ቀጣዩ የመጀመሪያ ቀን፦ ${en}`);
+      els.forEach(el=>el.textContent=FSF.t(el.id?`Next start date: ${en}`:`Next start: ${en}`,el.id?`ቀጣዩ የመጀመሪያ ቀን፦ ${en}`:`ቀጣይ ጅማሮ፦ ${en}`));
     }
     document.addEventListener('fsf:lang',renderNextStart);
     render();renderNextStart();
